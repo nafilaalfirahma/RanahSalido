@@ -35,11 +35,19 @@
       <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
           <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="dashboardRanahSalido.php"><img src="dashboard.png" alt="Logo" width="30" height="25" class="d-inline-block align-text-bottom"><b>Dashboard</b></a>
+          </li>
+
+          <li class="nav-item">
             <a class="nav-link" aria-current="page" href="infoPengelolaanPerkebunan.php"><img src="weed.png" alt="Logo" width="35" height="30" class="d-inline-block align-text-bottom"><b>Informasi Pengelolaan Perkebunan</b></a>
           </li>
 
           <li class="nav-item">
             <a class="nav-link" href="profilePerusahaan.php"><img src="office.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-bottom"><b>Company Profile</b></a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="informasiPasar.php"><img src="stocks.png" alt="Logo" width="35" height="30" class="d-inline-block align-text-bottom"><b>Informasi Pasar</b></a>
           </li>
 
           <li class="nav-item dropdown">
