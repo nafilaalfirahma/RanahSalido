@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 });
+
+Route::get('/pengelolaan_perkebunan', [ShowroomController::class, 'index'])-> name('pengelolaan_perkebunan.index');
+
+Route::get('/pengelolaan_perkebunan/create', [ShowroomController::class, 'create'])-> name('pengelolaan_perkebunan.create');
+
