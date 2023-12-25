@@ -17,7 +17,7 @@
                 <th>Estimasi Panen</th>
                 <th>Jumlah Panen</th>
                 <th>Persentase Keberhasilan</th>
-                <!-- <th>Aksi</th> -->
+                <th>Aksi</th>
               </tr>
             </thead>
             <tbody>
@@ -30,6 +30,7 @@
                   <td>{{ $kebun->estimasi_jumlah_panen }}</td>
                   <td>{{ $kebun->jumlah_panen }}</td>
                   <td>{{ $kebun->presentase_keberhasilan }}</td>
+                  <td></td>
                 </tr>
               @endforeach
             </tbody>
