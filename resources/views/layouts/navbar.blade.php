@@ -15,7 +15,7 @@
 
       <!-- Logo dan Brand Ranah Salidonya -->
       <a class="navbar-brand" href="profilePerusahaan.php">
-        <img src="LogoNavbar.png" alt="Logo" width="50" height="30" class="d-inline-block align-text-top">
+        <img src="assets/LogoNavbar.png" alt="Logo" width="50" height="30" class="d-inline-block align-text-top">
         <b>Ranah Salido</b>
       </a>
 
