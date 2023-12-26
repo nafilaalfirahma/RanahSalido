@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\PengelolaanKebunController;
+use App\Http\Controllers\PetaPersebaranController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,15 +16,35 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('dashboard');
+    return view('home_awal');
 });
 
-Route::get('/pengelolaan_perkebunan', [PengelolaanKebunController::class, 'index'])-> name('pengelolaan_perkebunan.index');
+Route::get('/login', function () {
+    return view('home');
+});
 
-Route::get('/pengelolaan_perkebunan/create', [PengelolaanKebunController::class, 'create'])-> name('pengelolaan_perkebunan.create');
+Route::get('/pengelolaan_perkebunan', [PengelolaanKebunController::class, 'index'])->name('pengelolaan_perkebunan.index');
 
-Route::post('/pengelolaan_perkebunan/store', [PengelolaanKebunController::class, 'store'])-> name('pengelolaan_perkebunan.store');
+Route::get('/pengelolaan_perkebunan/create', [PengelolaanKebunController::class, 'create'])->name('pengelolaan_perkebunan.create');
 
-Route::post('/pengelolaan_perkebunan/update', [PengelolaanKebunController::class, 'update'])-> name('pengelolaan_perkebunan.update');
+Route::get('peta_persebaran', [PetaPersebaranController::class, 'peta_persebaran'])->name('peta_persebaran');
 
-Route::post('/pengelolaan_perkebunan/destroy', [PengelolaanKebunController::class, 'destroy'])-> name('pengelolaan_perkebunan.destroy');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::prefix('admin')->group(function () {
+    
+    Route::get('peta_persebaran', [PetaPersebaranController::class, 'index'])->name('admin.peta_persebaran');
+
+    Route::get('tambah_data_persebaran', [PetaPersebaranController::class, 'create'])->name('admin.tambah_data_persebaran');
+
+    Route::post('store_data_persebaran', [PetaPersebaranController::class, 'store'])->name('admin.store_data_persebaran');
+
+    Route::get('hapus_data_peta/{id}', [PetaPersebaranController::class, 'destroy'])->name('admin.hapus_data_peta');
+
+    Route::get('edit_data_persebaran/{id}', [PetaPersebaranController::class, 'edit'])->name('admin.edit_data_persebaran');
+
+    Route::post('update_data_persebaran/{id}', [PetaPersebaranController::class, 'update'])->name('admin.update_data_persebaran');
+  
+});
