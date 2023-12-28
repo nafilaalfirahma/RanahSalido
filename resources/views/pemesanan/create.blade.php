@@ -7,11 +7,16 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
+
+    @include('layouts.navbar')
     <div class="container mt-5">
         <h2 class="text-center">Form Pemesanan Kelapa Sawit</h2>
 
         <!-- Form Pemesanan -->
-        <form id="orderForm" action="{{ route('pemesanan.store') }}" method="POST">
+        <form method="POST" action="{{ route('pemesanan.store') }}">
+
+            @csrf 
+
             <div class="mb-3">
                 <label for="nama" class="form-label">Nama Pemesan</label>
                 <input type="text" class="form-control" id="nama" name="nama" required>
@@ -32,7 +37,7 @@
                 <label for="jumlah_ton" class="form-label">Jumlah Pemesanan (ton)</label>
                 <input type="number" class="form-control" id="jumlah_ton" name="jumlah_ton">
             </div>
-            <a type="submit" class="btn btn-success" href="{{ route('pemesanan.index') }}">Submit</a>
+            <button type="submit" class="btn btn-success" action="{{ route('pemesanan.store') }}">Ajukan Pemesanan</button>
         </form>
 
 

@@ -32,11 +32,12 @@ Route::get('peta_persebaran', [PetaPersebaranController::class, 'peta_persebaran
 
 
 // Route Pemesanan 
-Route::get('/pemesanan/index', [PengajuanPemesananController::class, 'index'])->name('pemesanan.index');
-
 Route::get('/pemesanan/create', [PengajuanPemesananController::class, 'create'])->name('pemesanan.create');
 
 Route::post('/pemesanan/store', [PengajuanPemesananController::class, 'store'])->name('pemesanan.store');
+
+Route::get('/pemesanan/index', [PengajuanPemesananController::class, 'index'])->name('pemesanan.index');
+
 
 Auth::routes();
 
