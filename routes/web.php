@@ -36,7 +36,14 @@ Route::get('/pemesanan/create', [PengajuanPemesananController::class, 'create'])
 
 Route::post('/pemesanan/store', [PengajuanPemesananController::class, 'store'])->name('pemesanan.store');
 
-Route::get('/pemesanan/index', [PengajuanPemesananController::class, 'index'])->name('pemesanan.index');
+Route::get('/pemesanan/index', [PengajuanPemesananController::class, 'index'])->name('pemesanan/index');
+
+Route::get('/pemesanan/update/{id}', [PengajuanPemesananController::class, 'update'])->name('pemesanan.update');
+
+Route::post('/pemesanan/replace/{id}', [PengajuanPemesananController::class, 'replace'])->name('pemesanan.replace');
+
+Route::delete('/pemesanan/{id}', [PengajuanPemesananController::class, 'destroy'])->name('pemesanan.destroy');
+
 
 
 Auth::routes();
