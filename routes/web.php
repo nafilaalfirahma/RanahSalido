@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PengelolaanKebunController;
 use App\Http\Controllers\PetaPersebaranController;
+use App\Http\Controllers\PengajuanPemesananController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,6 +29,14 @@ Route::get('/pengelolaan_perkebunan', [PengelolaanKebunController::class, 'index
 Route::get('/pengelolaan_perkebunan/create', [PengelolaanKebunController::class, 'create'])->name('pengelolaan_perkebunan.create');
 
 Route::get('peta_persebaran', [PetaPersebaranController::class, 'peta_persebaran'])->name('peta_persebaran');
+
+
+// Route Pemesanan 
+Route::get('/pemesanan/index', [PengajuanPemesananController::class, 'index'])->name('pemesanan.index');
+
+Route::get('/pemesanan/create', [PengajuanPemesananController::class, 'create'])->name('pemesanan.create');
+
+Route::post('/pemesanan/store', [PengajuanPemesananController::class, 'store'])->name('pemesanan.store');
 
 Auth::routes();
 

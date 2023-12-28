@@ -70,7 +70,7 @@
                     class="d-inline-block align-text-bottom">Pengisian Form</b>
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="formPemesanan.php"><img src="cart.png" alt="Logo" width="25"
+                <li><a class="dropdown-item" href="{{ route('pemesanan.create') }}"><img src="cart.png" alt="Logo" width="25"
                       height="25" class="d-inline-block align-text-bottom"><b>Form Pemesanan</b></a></li>
                 <li><a class="dropdown-item" href="formPengajuanKerjasama.php"><img src="deal.png" alt="Logo" width="30"
                       height="30" class="d-inline-block align-text-bottom"><b>Form Pengajuan Kerjasama</b></a></li>
