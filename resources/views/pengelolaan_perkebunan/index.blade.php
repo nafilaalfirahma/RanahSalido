@@ -39,5 +39,10 @@
         <p>Tidak ada Data Pengelolaan Kebun.</p>
       @endif
     </div>
+    <div>
+      <center>
+      <button type="submit" class="btn btn-success" href="{{ route('pengelolaan_perkebunan.create') }}">Tambahkan Data</button>
+      </center>
+    </div>
   </section>
 @endsection

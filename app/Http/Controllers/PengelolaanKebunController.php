@@ -13,7 +13,7 @@ class PengelolaanKebunController extends Controller
     public function index()
     {
         $pengelolaan = PengelolaanKebun::all(); //ambil data 
-        return view('pengelolaan_perkebunan.index', compact('pengelolaan_perkebunan')); 
+        return view('pengelolaan_perkebunan.index', compact('pengelolaan')); 
     }
 
     /**
@@ -58,7 +58,7 @@ class PengelolaanKebunController extends Controller
      */
     public function edit(PengelolaanKebun $pengelolaan)
     {
-        //
+        return view('pengelolaan_perkebunan.index', compact('pengelolaan_perkebunan'));
     }
 
     /**
@@ -66,14 +66,33 @@ class PengelolaanKebunController extends Controller
      */
     public function update(Request $request, PengelolaanKebun $pengelolaan)
     {
-        //
+
+        DB::table('pengelolaan_kebun')->where('id',$request->id)->update([
+            "tanggal_tanam" => $data['plant'],
+            "tanggal_panen" => $data['harvest'],
+            "jenis_bibit" => $data['seed'],
+            "jenis_pupuk" => $data['fertilizer'],
+            "jumlah_tanam" => $data['plantQty'],
+            "jumlah_panen" => $data['harvestQty'],
+            // "presentase_keberhasilan" => $data['persentase'],
+            // "estimasi_jumlah_panen" => $data['estimasi'],
+        ]);
+
+        return redirect(route('pengelolaan_perkebunan.index'));
     }
+
 
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(PengelolaanKebun $pengelolaan)
     {
-        //
-    }
+        // Storage::delete('public/foto/' .$pengelolaan->);
+         DB::table('pengelolaan_kebun')->where('id',$request->id)->delete();
+ 
+         $pengelolaan->delete();
+ 
+         return redirect()->route('pengelolaan_perkebunan.index');
+     }
+ 
 }

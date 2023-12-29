@@ -5,7 +5,7 @@
     <div class="container">
       <h1 class="tambahh1">TAMBAH DATA PENGELOLAAN KEBUN</h1>
       <p class="tambahp">Tambahkan Informasi ke Tabel Informasi Pengelolaan Kebun</p>
-      <form action="{{ route('showroom.store') }}" method="POST" enctype="multipart/form-data">
+      <form action="{{ route('pengelolaan_perkebunan.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <label for="tanggal_tanam">Tanggal Tanam</label>
         <input id="wtanam" name="plant" type="date" required placeholder="Masukkan Tanggal Tanam">

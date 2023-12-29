@@ -43,7 +43,7 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="infoPengelolaanPerkebunan.php"><img src="weed.png"
+              <a class="nav-link" aria-current="page" href="{{ route('pengelolaan_perkebunan.index') }}"><img src="weed.png"
                   alt="Logo" width="35" height="30" class="d-inline-block align-text-bottom"><b>Informasi Pengelolaan
                   Perkebunan</b></a>
             </li>

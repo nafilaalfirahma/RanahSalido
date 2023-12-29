@@ -24,10 +24,15 @@ Route::get('/login', function () {
     return view('home');
 });
 
+// Pengelolaan Kebun
+Route::get('/pengelolaan_perkebunan', [PengelolaanKebunController::class, 'create'])->name('pengelolaan_perkebunan.create');
+
 Route::get('/pengelolaan_perkebunan', [PengelolaanKebunController::class, 'index'])->name('pengelolaan_perkebunan.index');
 
 Route::get('/pengelolaan_perkebunan/create', [PengelolaanKebunController::class, 'create'])->name('pengelolaan_perkebunan.create');
 
+
+//Peta Sebaran
 Route::get('peta_persebaran', [PetaPersebaranController::class, 'peta_persebaran'])->name('peta_persebaran');
 
 
