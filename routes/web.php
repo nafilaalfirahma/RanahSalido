@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PengelolaanKebunController;
+use App\Http\Controllers\InformasiPasarController;
 use App\Http\Controllers\PetaPersebaranController;
 use App\Http\Controllers\PengajuanPemesananController;
 use Illuminate\Support\Facades\Route;
@@ -49,7 +50,18 @@ Route::post('/pemesanan/replace/{id}', [PengajuanPemesananController::class, 're
 
 Route::delete('/pemesanan/{id}', [PengajuanPemesananController::class, 'destroy'])->name('pemesanan.destroy');
 
+// Route Informasi Pasar
+Route::get('/informasi_pasar/create', [InformasiPasarController::class, 'create'])->name('informasi_pasar.create');
 
+Route::post('/informasi_pasar/store', [InformasiPasarController::class, 'store'])->name('informasi_pasar.store');
+
+Route::get('/informasi_pasar/index', [InformasiPasarController::class, 'index'])->name('informasi_pasar.index');
+
+Route::get('/informasi_pasar/update/{id}', [InformasiPasarController::class, 'update'])->name('informasi_pasar.update');
+
+Route::post('/informasi_pasar/replace/{id}', [InformasiPasarController::class, 'replace'])->name('informasi_pasar.replace');
+
+Route::delete('/informasi_pasar/{id}', [InformasiPasarController::class, 'destroy'])->name('informasi_pasar.destroy');
 
 Auth::routes();
 

@@ -54,7 +54,7 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="informasiPasar.php"><img src="stocks.png" alt="Logo"
+              <a class="nav-link" aria-current="page" href="{{ route('informasi_pasar.index') }}"><img src="stocks.png" alt="Logo"
                   width="35" height="30" class="d-inline-block align-text-bottom"><b>Informasi Pasar</b></a>
             </li>
 
