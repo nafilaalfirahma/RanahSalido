@@ -15,7 +15,7 @@
     }
 
     .navbar a {
-      color: #e0e0e0;
+      color: #000000;
       font-weight: 600;
     }
 
@@ -234,7 +234,7 @@
       height: 50px;
       border-radius: 8px;
       border: none;
-      color: white;
+      color: black;
     }
   </style>
 </head>

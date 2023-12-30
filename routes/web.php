@@ -26,11 +26,19 @@ Route::get('/login', function () {
 });
 
 // Pengelolaan Kebun
-Route::get('/pengelolaan_perkebunan', [PengelolaanKebunController::class, 'create'])->name('pengelolaan_perkebunan.create');
+//Route::get('/pengelolaan_perkebunan', [PengelolaanKebunController::class, 'create'])->name('pengelolaan_perkebunan.create');
 
-Route::get('/pengelolaan_perkebunan', [PengelolaanKebunController::class, 'index'])->name('pengelolaan_perkebunan.index');
+Route::get('/pengelolaan_perkebunan/index', [PengelolaanKebunController::class, 'index'])->name('pengelolaan_perkebunan.index');
 
 Route::get('/pengelolaan_perkebunan/create', [PengelolaanKebunController::class, 'create'])->name('pengelolaan_perkebunan.create');
+
+Route::post('/pengelolaan_perkebunan/store', [PengelolaanKebunController::class, 'store'])->name('pengelolaan_perkebunan.store');
+
+Route::get('/pengelolaan_perkebunan/edit/{id}', [PengelolaanKebunController::class, 'edit'])->name('pengelolaan_perkebunan.edit');
+
+Route::post('/pengelolaan_perkebunan/update/{id}', [PengelolaanKebunController::class, 'update'])->name('pengelolaan_perkebunan.update');
+
+Route::get('/pengelolaan_perkebunan/destroy/{id}', [PengelolaanKebunController::class, 'destroy'])->name('pengelolaan_perkebunan.destroy');
 
 
 //Peta Sebaran

@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('jenis_pupuk');
             $table->integer('jumlah_tanam');
             $table->integer('jumlah_panen');
-            $table->decimal('presentase_keberhasilan');
-            $table->integer('estimasi_jumlah_panen');
+            $table->decimal('presentase_keberhasilan')->nullable();
+            $table->integer('estimasi_jumlah_panen')->nullable();
             $table->timestamps();
         });
     }

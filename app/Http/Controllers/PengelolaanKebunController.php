@@ -56,43 +56,61 @@ class PengelolaanKebunController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(PengelolaanKebun $pengelolaan)
+    public function edit(PengelolaanKebun $pengelolaan, $id)
     {
-        return view('pengelolaan_perkebunan.index', compact('pengelolaan_perkebunan'));
+        $pengelolaan = PengelolaanKebun::findOrFail($id);
+        return view('pengelolaan_perkebunan.update', compact('pengelolaan'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, PengelolaanKebun $pengelolaan)
+    public function update(Request $request, PengelolaanKebun $pengelolaan, $id)
     {
+       $pengelolaan = PengelolaanKebun::findOrFail($id);
 
-        DB::table('pengelolaan_kebun')->where('id',$request->id)->update([
-            "tanggal_tanam" => $data['plant'],
-            "tanggal_panen" => $data['harvest'],
-            "jenis_bibit" => $data['seed'],
-            "jenis_pupuk" => $data['fertilizer'],
-            "jumlah_tanam" => $data['plantQty'],
-            "jumlah_panen" => $data['harvestQty'],
-            // "presentase_keberhasilan" => $data['persentase'],
-            // "estimasi_jumlah_panen" => $data['estimasi'],
-        ]);
+       $pengelolaan->tanggal_tanam = $request->tanggal_tanam;
+       $pengelolaan->tanggal_panen = $request->tanggal_panen;
+       $pengelolaan->jenis_bibit = $request->jenis_bibit;
+       $pengelolaan->jenis_pupuk = $request->jenis_pupuk;
+       $pengelolaan->jumlah_tanam = $request->jumlah_tanam;
+       $pengelolaan->jumlah_panen = $request->jumlah_panen;
+       $pengelolaan->presentase_keberhasilan = $request->presentase_keberhasilan;
+       $pengelolaan->estimasi_jumlah_panen = $request->estimasi_jumlah_panen;
 
-        return redirect(route('pengelolaan_perkebunan.index'));
+       $pengelolaan->save();
+
+       
+    //    $pengelolaan->update([
+    //        "tanggal_tanam" => $request->input('plant'),
+    //        "tanggal_panen" => $request->input('harvest'),
+    //        "jenis_bibit" => $request->input('seed'),
+    //        "jenis_pupuk" => $request->input('fertilizer'),
+    //        "jumlah_tanam" => $request->input('plantQty'),
+    //        "jumlah_panen" => $request->input('harvestQty'),
+    //        "presentase_keberhasilan" => $request->input('persentase'),
+    //        "estimasi_jumlah_panen" => $request->input('estimasi'),
+    //    ]);
+    
+       return redirect(route('pengelolaan_perkebunan.index'));
     }
 
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(PengelolaanKebun $pengelolaan)
+    public function destroy(PengelolaanKebun $pengelolaan,$id)
     {
-        // Storage::delete('public/foto/' .$pengelolaan->);
-         DB::table('pengelolaan_kebun')->where('id',$request->id)->delete();
+        // PengelolaanKebun::getTable('pengelolaan_kebun')->where('id',$request->id)->delete();
  
-         $pengelolaan->delete();
+        //  $pengelolaan->delete();
  
-         return redirect()->route('pengelolaan_perkebunan.index');
+        //  return redirect()->route('pengelolaan_perkebunan.index');
+        PengelolaanKebun::destroy($id);
+        PengelolaanKebun::where('id', $id)->delete();
+
+        return redirect(route('pengelolaan_perkebunan.index'));
+
      }
  
 }

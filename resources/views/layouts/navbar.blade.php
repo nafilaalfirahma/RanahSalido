@@ -14,8 +14,8 @@
     <div class="container-fluid">
 
       <!-- Logo dan Brand Ranah Salidonya -->
-      <a class="navbar-brand" href="profilePerusahaan.php">
-        <img src="LogoNavbar.png" alt="Logo" width="50" height="30" class="d-inline-block align-text-top">
+      <a class="navbar-brand" href="">
+      <img src="{{ asset('assets/LogoNavbar.png') }}" alt="Logo" width="50" height="30" class="d-inline-block align-text-top">
         <b>Ranah Salido</b>
       </a>
 
@@ -27,7 +27,7 @@
       <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
         <!-- Headernya Sidebar -->
         <div class="offcanvas-header">
-          <img src="IconUser.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-top">
+          <img src="{{ asset('assets/IconUser.png') }}" alt="Logo" width="50" height="50" class="d-inline-block align-text-top">
           <a class="nav-link" aria-current="page" href="userProfile.php">
             <h5 class="offcanvas-title" id="offcanvasNavbarLabel">User Profile</h5>
           </a>
@@ -38,41 +38,41 @@
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="dashboardRanahSalido.php"><img src="dashboard.png"
+              <a class="nav-link" aria-current="page" href="dashboardRanahSalido.php"><img src="{{ asset('assets/favicon.ico') }}"
                   alt="Logo" width="30" height="25" class="d-inline-block align-text-bottom"><b>Dashboard</b></a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="{{ route('pengelolaan_perkebunan.index') }}"><img src="weed.png"
+              <a class="nav-link" aria-current="page" href="{{ route('pengelolaan_perkebunan.index') }}"><img src="{{ asset('assets/weed.png') }}"
                   alt="Logo" width="35" height="30" class="d-inline-block align-text-bottom"><b>Informasi Pengelolaan
                   Perkebunan</b></a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="profilePerusahaan.php"><img src="office.png" alt="Logo" width="30" height="30"
+              <a class="nav-link" href="profilePerusahaan.php"><img src="{{ asset('assets/office.png') }}" alt="Logo" width="30" height="30"
                   class="d-inline-block align-text-bottom"><b>Company Profile</b></a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="{{ route('informasi_pasar.index') }}"><img src="stocks.png" alt="Logo"
+              <a class="nav-link" aria-current="page" href="{{ route('informasi_pasar.index') }}"><img src="{{ asset('assets/cart.png') }}" alt="Logo"
                   width="35" height="30" class="d-inline-block align-text-bottom"><b>Informasi Pasar</b></a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="{{ route('peta_persebaran') }}"><img src="stocks.png"
+              <a class="nav-link" aria-current="page" href="{{ route('peta_persebaran') }}"><img src="{{ asset('assets/favicon.ico') }}"
                   alt="Logo" width="35" height="30" class="d-inline-block align-text-bottom"><b>Peta Persebaran</b></a>
             </li>
 
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                 aria-expanded="false">
-                <b><img src="contract.png" alt="Logo" width="30" height="30"
+                <b><img src="{{ asset('assets/contract.png') }}" alt="Logo" width="30" height="30"
                     class="d-inline-block align-text-bottom">Pengisian Form</b>
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="{{ route('pemesanan.create') }}"><img src="cart.png" alt="Logo" width="25"
+                <li><a class="dropdown-item" href="{{ route('pemesanan.create') }}"><img src="{{ asset('assets/cart.png') }}" alt="Logo" width="25"
                       height="25" class="d-inline-block align-text-bottom"><b>Form Pemesanan</b></a></li>
-                <li><a class="dropdown-item" href="formPengajuanKerjasama.php"><img src="deal.png" alt="Logo" width="30"
+                <li><a class="dropdown-item" href="formPengajuanKerjasama.php"><img src="{{ asset('assets/deal.png') }}" alt="Logo" width="30"
                       height="30" class="d-inline-block align-text-bottom"><b>Form Pengajuan Kerjasama</b></a></li>
               </ul>
             </li>

@@ -5,7 +5,7 @@
     <div class="container">
       <h1 class="tambahh1">TAMBAH DATA PENGELOLAAN KEBUN</h1>
       <p class="tambahp">Tambahkan Informasi ke Tabel Informasi Pengelolaan Kebun</p>
-      <form action="{{ route('pengelolaan_perkebunan.store') }}" method="POST" enctype="multipart/form-data">
+      <form action="{{ route('pengelolaan_perkebunan.store') }}" method="POST">
         @csrf
         <label for="tanggal_tanam">Tanggal Tanam</label>
         <input id="wtanam" name="plant" type="date" required placeholder="Masukkan Tanggal Tanam">
@@ -15,15 +15,15 @@
         <input id="bibit" name="seed" type="text" required placeholder="Masukkan Jenis Bibit yang Ditanam">
         <label for="jenis_pupuk">Jenis Pupuk</label>
         <input id="pupuk" name="fertilizer" type="text" required placeholder="Masukkan Jenis Pupuk yang Digunakan">
-        <label for="jumlah_tanam">Jumlah Tanam</label>
+        <label for="jumlah_tanam">Jumlah Tanam (ton)</label>
         <input id="jtanam" name="plantQty" type="number" required placeholder="Masukkan Jumlah Bibit yang Ditanam">
-        <label for="jumlah_panen">Jumlah Panen</label>
+        <label for="jumlah_panen">Jumlah Panen (ton)</label>
         <input id="jpanen" name="harvestQty" type="number" required placeholder="Masukkan Jumlah Panen yang Diperoleh">
-        <!-- <label for="presentase_keberhasilan">Persentase Keberhasilan</label>
-        <input id="persentase" name="persentase" type="number" required placeholder="Masukkan Persentase">
-        <label for="estimasi_jumlah_panen">Estimasi Jumlah Panen</label>
-        <input id="estimasi" name="estimasi" type="number" required placeholder="Masukkan Estimasi"> -->
-        <button class="btn btn-primary" type="submit" style="margin-top: 40px;">Selesai</button>
+        <label for="presentase_keberhasilan">Persentase Keberhasilan (%)</label>
+        <input id="persentase" name="persentase" type="number" placeholder="Masukkan Persentase">
+        <label for="estimasi_jumlah_panen">Estimasi Jumlah Panen (ton)</label>
+        <input id="estimasi" name="estimasi" type="number" placeholder="Masukkan Estimasi">
+        <button class="btn btn-success" type="submit" action="{{ route('pengelolaan_perkebunan.store') }}" style="margin-top: 40px;">Selesai</button>
       </form>
     </div>
   </section>
