@@ -2,7 +2,6 @@
 
     @section('content')
 
-    <!-- Tabel Data Pemesanan -->
     <br>
     <div class="mt-5">
             <br>
@@ -30,15 +29,7 @@
                         <td>{{ $pemesanan->jenis_sawit }}</td>
                         <td>{{ $pemesanan->jumlah_ton }}</td>
                         <td>
-
-                            <a href="{{ route('pemesanan.update', ['id' => $pemesanan->id]) }}" class="btn btn-success">Edit</a>
-
-                            <form action="{{ route('pemesanan.destroy', ['id' => $pemesanan->id]) }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Delete</button>
-                            </form>
-
+                            <a href="{{ route('pemesanan.show', ['id' => $pemesanan->id]) }}" class="btn btn-success">Lihat Detail</a>
                         </td>
                     </tr>
                     @endforeach

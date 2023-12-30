@@ -4,6 +4,7 @@ use App\Http\Controllers\PengelolaanKebunController;
 use App\Http\Controllers\InformasiPasarController;
 use App\Http\Controllers\PetaPersebaranController;
 use App\Http\Controllers\PengajuanPemesananController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,9 +22,14 @@ Route::get('/', function () {
     return view('home_awal');
 });
 
-Route::get('/login', function () {
-    return view('home');
-});
+
+// Route::get('/login', function () {
+//     return view('home_awal');
+// });
+
+
+// Log in Route
+Route::get('/login', [LoginController::class, 'login'])->name('login');
 
 // Pengelolaan Kebun
 //Route::get('/pengelolaan_perkebunan', [PengelolaanKebunController::class, 'create'])->name('pengelolaan_perkebunan.create');
@@ -48,15 +54,19 @@ Route::get('peta_persebaran', [PetaPersebaranController::class, 'peta_persebaran
 // Route Pemesanan 
 Route::get('/pemesanan/create', [PengajuanPemesananController::class, 'create'])->name('pemesanan.create');
 
-Route::post('/pemesanan/store', [PengajuanPemesananController::class, 'store'])->name('pemesanan.store');
+// Route::post('/pemesanan/store', [PengajuanPemesananController::class, 'store'])->name('pemesanan.store');
 
-Route::get('/pemesanan/index', [PengajuanPemesananController::class, 'index'])->name('pemesanan/index');
+// Route::get('/pemesanan/indexUser', [PengajuanPemesananController::class, 'indexUser'])->name('pemesanan.indexUser');
 
-Route::get('/pemesanan/update/{id}', [PengajuanPemesananController::class, 'update'])->name('pemesanan.update');
+// Route::post('/pemesanan/index', [PengajuanPemesananController::class, 'indexAdmin'])->name('pemesanan.index.admin');
 
-Route::post('/pemesanan/replace/{id}', [PengajuanPemesananController::class, 'replace'])->name('pemesanan.replace');
+// Route::get('/pemesanan/update/{id}', [PengajuanPemesananController::class, 'update'])->name('pemesanan.update');
 
-Route::delete('/pemesanan/{id}', [PengajuanPemesananController::class, 'destroy'])->name('pemesanan.destroy');
+// Route::post('/pemesanan/replace/{id}', [PengajuanPemesananController::class, 'replace'])->name('pemesanan.replace');
+
+Route::get('/pemesanan/detailsPengajuan/{id}', [PengajuanPemesananController::class, 'show'])->name('pemesanan.show');
+
+// Route::delete('/pemesanan/{id}', [PengajuanPemesananController::class, 'destroy'])->name('pemesanan.destroy');
 
 // Route Informasi Pasar
 Route::get('/informasi_pasar/create', [InformasiPasarController::class, 'create'])->name('informasi_pasar.create');
@@ -73,20 +83,60 @@ Route::delete('/informasi_pasar/{id}', [InformasiPasarController::class, 'destro
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home_awal', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::prefix('admin')->group(function () {
-    
-    Route::get('peta_persebaran', [PetaPersebaranController::class, 'index'])->name('admin.peta_persebaran');
+//Normal User Routes List 
+Route::middleware(['auth', 'user-access::user'])->group(function () {
 
-    Route::get('tambah_data_persebaran', [PetaPersebaranController::class, 'create'])->name('admin.tambah_data_persebaran');
+    Route::get('/home_awal', [HomeController::class, 'index'])->name('userHome');
 
-    Route::post('store_data_persebaran', [PetaPersebaranController::class, 'store'])->name('admin.store_data_persebaran');
+    //Submit Pengajuan_Pemesanan cuma bisa user yg udh login
+    Route::post('/pemesanan/store', [PengajuanPemesananController::class, 'store'])->name('pemesanan.store');
 
-    Route::get('hapus_data_peta/{id}', [PetaPersebaranController::class, 'destroy'])->name('admin.hapus_data_peta');
-
-    Route::get('edit_data_persebaran/{id}', [PetaPersebaranController::class, 'edit'])->name('admin.edit_data_persebaran');
-
-    Route::post('update_data_persebaran/{id}', [PetaPersebaranController::class, 'update'])->name('admin.update_data_persebaran');
-  
+    // Tampilan pemesanan
+    Route::get('/pemesanan/indexUser', [PengajuanPemesananController::class, 'indexUser'])->name('pemesanan.indexUser');
 });
+
+// Admin Route List 
+Route::middleware(['auth', 'user-access:admin'])->group(function () {
+
+    Route::get('/adminHome', [HomeController::class, 'adminHome'])->name('adminHome');
+
+    Route::post('/pemesanan/index', [PengajuanPemesananController::class, 'indexAdmin'])->name('pemesanan.index.admin');
+
+    Route::get('/pemesanan/update/{id}', [PengajuanPemesananController::class, 'update'])->name('pemesanan.update');
+
+    Route::post('/pemesanan/replace/{id}', [PengajuanPemesananController::class, 'replace'])->name('pemesanan.replace');
+
+    Route::delete('/pemesanan/{id}', [PengajuanPemesananController::class, 'destroy'])->name('pemesanan.destroy');
+});
+
+ 
+
+// Route::prefix('admin')->group(function () {
+    
+//     Route::get('peta_persebaran', [PetaPersebaranController::class, 'index'])->name('admin.peta_persebaran');
+
+//     Route::get('tambah_data_persebaran', [PetaPersebaranController::class, 'create'])->name('admin.tambah_data_persebaran');
+
+//     Route::post('store_data_persebaran', [PetaPersebaranController::class, 'store'])->name('admin.store_data_persebaran');
+
+//     Route::get('hapus_data_peta/{id}', [PetaPersebaranController::class, 'destroy'])->name('admin.hapus_data_peta');
+
+//     Route::get('edit_data_persebaran/{id}', [PetaPersebaranController::class, 'edit'])->name('admin.edit_data_persebaran');
+
+//     Route::post('update_data_persebaran/{id}', [PetaPersebaranController::class, 'update'])->name('admin.update_data_persebaran');
+  
+// });
+
+// Auth::routes();
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Auth::routes();
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
