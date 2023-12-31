@@ -26,12 +26,10 @@
       </button>
       <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
         <!-- Headernya Sidebar -->
-        <div class="offcanvas-header mt-5" >
-          <img src="<?php echo e(asset('assets/IconUser.png')); ?>" alt="Logo" width="50" height="50" class="d-inline-block align-text-top">
-          <a class="nav-link" aria-current="page" href="">
-          <a class="nav-link" aria-current="page" href="<?php echo e(route('login')); ?>">
+        <div class="offcanvas-header">
 
-            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">User Profile</h5>
+          <a class="nav-link" aria-current="page" href="">
+            <h5 class="offcanvas-title text-center" id="offcanvasNavbarLabel">Navigation Bar</h5>
           </a>
 
           <!-- Informasi Pengelolaan Kebun -->
@@ -40,11 +38,13 @@
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#"><i class="fa-solid fa-house"></i><b> Dashboard</b></a>
+
+              <a class="nav-link" aria-current="page" href="<?php echo e(route('index')); ?>"><img src="<?php echo e(asset('assets/favicon.ico')); ?>"
+                  alt="Logo" width="30" height="25" class="d-inline-block align-text-bottom"><b>Dashboard</b></a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="<?php echo e(route('pengelolaan_perkebunan.index')); ?>"><img src="<?php echo e(asset('assets/weed.png')); ?>"
+              <a class="nav-link" aria-current="page" href="<?php echo e(route('pengelolaan_perkebunan.indexUser')); ?>"><img src="<?php echo e(asset('assets/weed.png')); ?>"
                   alt="Logo" width="35" height="30" class="d-inline-block align-text-bottom"><b>Informasi Pengelolaan
                   Perkebunan</b></a>
             </li>

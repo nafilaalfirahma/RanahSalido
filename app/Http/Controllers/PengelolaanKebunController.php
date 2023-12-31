@@ -16,6 +16,12 @@ class PengelolaanKebunController extends Controller
         return view('pengelolaan_perkebunan.index', compact('pengelolaan')); 
     }
 
+    public function indexUser()
+    {
+        $pengelolaan = PengelolaanKebun::all(); //ambil data 
+        return view('pengelolaan_perkebunan.indexUser', compact('pengelolaan')); 
+    }
+
     /**
      * Show the form for creating a new resource.
      */
@@ -40,9 +46,10 @@ class PengelolaanKebunController extends Controller
             "presentase_keberhasilan" => $data['jumlah_panen']/($data['jumlah_tanam']*41)*100,
             "estimasi_jumlah_panen" => $data['jumlah_tanam']*41,
         ]);
+        
+        session()->flash('message', 'Data Berhasil Dibuat!');
 
-
-        return redirect(route('pengelolaan_perkebunan.index'))-> with ('success', 'Data berhasil ditambahkan');
+        return redirect(route('pengelolaan_perkebunan.index'));
     }
 
     /**
@@ -74,8 +81,8 @@ class PengelolaanKebunController extends Controller
             "jenis_pupuk" => 'required',
             "jumlah_tanam" => 'required|numeric',
             "jumlah_panen" => 'required|numeric',
-            "presentase_keberhasilan" => 'required|numeric',
-            "estimasi_jumlah_panen" =>'required|numeric',
+            // "presentase_keberhasilan" => 'numeric',
+            // "estimasi_jumlah_panen" =>'numeric',
         ]);
 
         $data= ([
@@ -85,16 +92,16 @@ class PengelolaanKebunController extends Controller
             "jenis_pupuk" => $request->jenis_pupuk,
             "jumlah_tanam" => $request->jumlah_tanam,
             "jumlah_panen" => $request->jumlah_panen,
-            "presentase_keberhasilan" => $request->presentase_keberhasilan,
-            "estimasi_jumlah_panen" => $request->estimasi_jumlah_panen,
+            "presentase_keberhasilan" => ($request->jumlah_panen)/(($request->jumlah_tanam)*41)*100,
+            "estimasi_jumlah_panen" => ($request->jumlah_tanam)*41,
         ]);
 
         $pengelolaan = PengelolaanKebun::find($id);
 
         $pengelolaan->update($data);
 
-        session()->flash('success', 'Record saved successfully!');
-       return redirect(route('pengelolaan_perkebunan.index'))-> with ('success', 'Data berhasil diedit');
+        session()->flash('message', 'Data Berhasil Diedit!');
+       return redirect(route('pengelolaan_perkebunan.index'));
     }
 
 
@@ -111,7 +118,8 @@ class PengelolaanKebunController extends Controller
         PengelolaanKebun::destroy($id);
         PengelolaanKebun::where('id', $id)->delete();
 
-        return redirect(route('pengelolaan_perkebunan.index'))-> with ('success', 'Data berhasil dihapus');
+        session()->flash('message', 'Data Berhasil Dihapus!');
+        return redirect(route('pengelolaan_perkebunan.index'));
 
      }
      

@@ -26,10 +26,10 @@
       </button>
       <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
         <!-- Headernya Sidebar -->
-        <div class="offcanvas-header mt-5" >
-          <img src="{{ asset('assets/IconUser.png') }}" alt="Logo" width="50" height="50" class="d-inline-block align-text-top">
+        <div class="offcanvas-header">
+
           <a class="nav-link" aria-current="page" href="">
-            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">User Profile</h5>
+            <h5 class="offcanvas-title text-center" id="offcanvasNavbarLabel">Navigation Bar</h5>
           </a>
 
           <!-- Informasi Pengelolaan Kebun -->
@@ -38,11 +38,13 @@
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#"><i class="fa-solid fa-house"></i><b> Dashboard</b></a>
+
+              <a class="nav-link" aria-current="page" href="{{ route('index')}}"><img src="{{ asset('assets/favicon.ico') }}"
+                  alt="Logo" width="30" height="25" class="d-inline-block align-text-bottom"><b>Dashboard</b></a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="{{ route('pengelolaan_perkebunan.index') }}"><img src="{{ asset('assets/weed.png') }}"
+              <a class="nav-link" aria-current="page" href="{{ route('pengelolaan_perkebunan.indexUser') }}"><img src="{{ asset('assets/weed.png') }}"
                   alt="Logo" width="35" height="30" class="d-inline-block align-text-bottom"><b>Informasi Pengelolaan
                   Perkebunan</b></a>
             </li>

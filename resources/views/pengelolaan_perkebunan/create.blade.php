@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+@extends('layouts.layoutAdmin')
 
 @section('content')
   <section id='form'>
@@ -27,4 +27,5 @@
       </form>
     </div>
   </section>
+
 @endsection

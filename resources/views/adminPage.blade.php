@@ -31,9 +31,7 @@
                         <div class="card">
                             <h5>Informasi Pasar</h5>
                             <br>
-                            <a href=""></a>
-                            <a href=""></a>
-                            <a href=""></a>
+                            <a type="submit" class="btn btn-success" href=""></a>
                         </div>
                     </div>
                     <!-- Card 2 -->
@@ -42,9 +40,7 @@
                             <!-- Card content -->
                             <h5>Pengelolaan Perkebunan</h5>
                             <br>
-                            <a href=""></a>
-                            <a href=""></a>
-                            <a href=""></a>
+                            <a type="submit" class="btn btn-success" href="{{ route('pengelolaan_perkebunan.index') }}">Kelola Data</a>
                         </div>
                     </div>
                     <!-- Card 3 -->
@@ -53,9 +49,7 @@
                             <!-- Card content -->
                             <h5>Peta Sebaran</h5>
                             <br>
-                            <a href=""></a>
-                            <a href=""></a>
-                            <a href=""></a>
+                            <a type="submit" class="btn btn-success" href=""></a>
                         </div>
                     </div>
                 </div>
@@ -70,8 +64,7 @@
                         <div class="card">
                             <h5>Riwayat Pengajuan Pemesanan</h5>
                             <br>
-                            <a href="{{ route('pemesanan.index') }}">List Pengajuan Pemesanan</a>
-                            <a href="{{ route('pemesanan.update') }}">Edit Pengajuan Pemesanan</a>
+                            <a type="submit" class="btn btn-success" href="{{ route('pemesanan.index') }}">List Pengajuan Pemesanan</a>
                         </div>
                     </div>
                     <!-- Card 5 -->
@@ -79,9 +72,7 @@
                         <div class="card">
                             <h5>Riwayat Pengajuan Kerjasama</h5>
                             <br>
-                            <a href=""></a>
-                            <a href=""></a>
-                            <a href=""></a>
+                            <a type="submit" class="btn btn-success" href=""></a>
                         </div>
                     </div>
                 </div>
@@ -90,7 +81,7 @@
                 <br>
                 <div>
                     <form action="">
-                    <button type="submit" class="btn btn-success">Logout</button>
+                    <a type="submit" class="btn btn-danger" href={{ route('logout')}}>Logout</a>
                     </form>
                 </div>
 

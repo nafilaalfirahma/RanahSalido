@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+@extends('layouts.layoutAdmin')
 
 @section('content')
   <section id='form'>
@@ -19,10 +19,10 @@
         <input id="jtanam" name="jumlah_tanam" type="number" value="{{$pengelolaan->jumlah_tanam}}">
         <label for="jumlah_panen">Jumlah Panen (ton)</label>
         <input id="jpanen" name="jumlah_panen" type="number"  value="{{$pengelolaan->jumlah_panen}}">
-        <label for="presentase_keberhasilan">Persentase Keberhasilan (%)</label>
+        <!-- <label for="presentase_keberhasilan">Persentase Keberhasilan (%)</label>
         <input id="persentase" name="presentase_keberhasilan" type="number" value="{{$pengelolaan->presentase_keberhasilan}}">
         <label for="estimasi_jumlah_panen">Estimasi Jumlah Panen (ton)</label>
-        <input id="estimasi" name="estimasi_jumlah_panen" type="number" value="{{$pengelolaan->estimasi_jumlah_panen}}">
+        <input id="estimasi" name="estimasi_jumlah_panen" type="number" value="{{$pengelolaan->estimasi_jumlah_panen}}"> -->
         <button class="btn btn-success" type="submit"  style="margin-top: 40px;">Selesai</button>
       </form>
     </div>
