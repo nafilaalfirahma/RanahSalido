@@ -4,8 +4,12 @@ use App\Http\Controllers\PengelolaanKebunController;
 use App\Http\Controllers\InformasiPasarController;
 use App\Http\Controllers\PetaPersebaranController;
 use App\Http\Controllers\PengajuanPemesananController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController as AuthRegisterController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -28,8 +32,7 @@ Route::get('/', function () {
 // });
 
 
-// Log in Route
-Route::get('/login', [LoginController::class, 'login'])->name('login');
+
 
 // Pengelolaan Kebun
 //Route::get('/pengelolaan_perkebunan', [PengelolaanKebunController::class, 'create'])->name('pengelolaan_perkebunan.create');
@@ -81,14 +84,35 @@ Route::post('/informasi_pasar/replace/{id}', [InformasiPasarController::class, '
 
 Route::delete('/informasi_pasar/{id}', [InformasiPasarController::class, 'destroy'])->name('informasi_pasar.destroy');
 
+Route::middleware(['guest'])->group(function () {
+    Route::get('/', [HomeController::class, 'index'])->name('home_awal');
+
+    Route::get('/login', [LoginController::class, 'indexLogin'])->name('loginPage');
+
+    Route::post('/login', [LoginController::class, 'login'])->name('login');
+
+    Route::get('/register', [AuthRegisterController::class, 'registerForm'])->name('registerForm');
+
+    Route::post('/login', [AuthRegisterController::class, 'register'])->name('register');
+
+});
+
 Auth::routes();
 
+
+// Log out Route
+// Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+
 // Route::get('/home_awal', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/home_awal', [HomeController::class, 'index'])->name('home_awal');
 
 //Normal User Routes List 
 Route::middleware(['auth', 'user-access::user'])->group(function () {
 
-    Route::get('/home_awal', [HomeController::class, 'index'])->name('userHome');
+    Route::get('/home', [HomeController::class, 'userHome'])->name('userHome');
+
+    Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
     //Submit Pengajuan_Pemesanan cuma bisa user yg udh login
     Route::post('/pemesanan/store', [PengajuanPemesananController::class, 'store'])->name('pemesanan.store');
@@ -102,7 +126,9 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
 
     Route::get('/adminHome', [HomeController::class, 'adminHome'])->name('adminHome');
 
-    Route::post('/pemesanan/index', [PengajuanPemesananController::class, 'indexAdmin'])->name('pemesanan.index.admin');
+    Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+
+    Route::post('/pemesanan/index', [PengajuanPemesananController::class, 'indexAdmin'])->name('pemesanan.indexAdmin');
 
     Route::get('/pemesanan/update/{id}', [PengajuanPemesananController::class, 'update'])->name('pemesanan.update');
 

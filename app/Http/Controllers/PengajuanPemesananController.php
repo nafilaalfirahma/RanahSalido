@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\PengajuanPemesanan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log; 
+use Illuminate\Support\Facades\Auth;
 
 
 class PengajuanPemesananController extends Controller
@@ -13,9 +14,13 @@ class PengajuanPemesananController extends Controller
 
     public function indexUser(){
 
-        $pemesanans = PengajuanPemesanan::all();
+        $userId = Auth::id(); // Get the ID of the currently authenticated user
+        $pemesanans = PengajuanPemesanan::where('user_id', $userId)->get(); // Get the orders of the user
 
         return view('pemesanan/indexUser', compact('pemesanans'));
+        
+        // $pemesanans = PengajuanPemesanan::all();
+        // return view('pemesanan/indexUser', compact('pemesanans'));
     
     }
 
