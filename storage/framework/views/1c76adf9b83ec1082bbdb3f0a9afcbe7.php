@@ -33,13 +33,9 @@
                     <label for="kontak" class="form-label">Kontak : </label>
                     <input type="text" class="form-control" id="kontak" name="kontak">
                 </div>
-                <div class="form-group mb-3">
-                    <label for="jenis_kerjasama">Jenis Kerjasama : </label>
-                    <select class="form-control" name="jenis_kerjasama" required>
-                        <option value="Option 1">Lahan</option>
-                        <option value="Option 2">Dana</option>
-                        <option value="Option 3">Bibit</option>
-                    </select>
+                <div class="mb-3">
+                    <label for="jenis_kerjasama">Jenis Kerjasama : (Lahan/Dana/Bibit/Ohers) </label>
+                    <input type="text" class="form-control" id="jenis_kerjasama" name="jenis_kerjasama">
                 </div>
                 <div class="d-flex justify-content-between align-items-center">
                     <button type="submit" class="btn btn-success btn-sm mb-1">Ajukan Kerjasama</button>
