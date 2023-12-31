@@ -31,14 +31,14 @@ class PengelolaanKebunController extends Controller
     {
         $data = $request->all();
         PengelolaanKebun::create([
-            "tanggal_tanam" => $data['plant'],
-            "tanggal_panen" => $data['harvest'],
-            "jenis_bibit" => $data['seed'],
-            "jenis_pupuk" => $data['fertilizer'],
-            "jumlah_tanam" => $data['plantQty'],
-            "jumlah_panen" => $data['harvestQty'],
-            "presentase_keberhasilan" => $data['persentase'],
-            "estimasi_jumlah_panen" => $data['estimasi'],
+            "tanggal_tanam" => $data['tanggal_tanam'],
+            "tanggal_panen" => $data['tanggal_panen'],
+            "jenis_bibit" => $data['jenis_bibit'],
+            "jenis_pupuk" => $data['jenis_pupuk']?? '-',
+            "jumlah_tanam" => $data['jumlah_tanam'],
+            "jumlah_panen" => $data['jumlah_panen']?? '0',
+            "presentase_keberhasilan" => $data['jumlah_panen']/($data['jumlah_tanam']*41),
+            "estimasi_jumlah_panen" => $data['jumlah_tanam']*41,
         ]);
 
 
@@ -56,9 +56,9 @@ class PengelolaanKebunController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(PengelolaanKebun $pengelolaan, $id)
+    public function edit($id)
     {
-        $pengelolaan = PengelolaanKebun::findOrFail($id);
+        $pengelolaan = PengelolaanKebun::find($id);
         return view('pengelolaan_perkebunan.update', compact('pengelolaan'));
     }
 
@@ -67,31 +67,32 @@ class PengelolaanKebunController extends Controller
      */
     public function update(Request $request, PengelolaanKebun $pengelolaan, $id)
     {
-       $pengelolaan = PengelolaanKebun::findOrFail($id);
+        $request->validate([
+            "tanggal_tanam" => 'required',
+            "tanggal_panen" => 'required',
+            "jenis_bibit" => 'required',
+            "jenis_pupuk" => 'required',
+            "jumlah_tanam" => 'required|numeric',
+            "jumlah_panen" => 'required|numeric',
+            "presentase_keberhasilan" => 'required|numeric',
+            "estimasi_jumlah_panen" =>'required|numeric',
+        ]);
 
-       $pengelolaan->tanggal_tanam = $request->tanggal_tanam;
-       $pengelolaan->tanggal_panen = $request->tanggal_panen;
-       $pengelolaan->jenis_bibit = $request->jenis_bibit;
-       $pengelolaan->jenis_pupuk = $request->jenis_pupuk;
-       $pengelolaan->jumlah_tanam = $request->jumlah_tanam;
-       $pengelolaan->jumlah_panen = $request->jumlah_panen;
-       $pengelolaan->presentase_keberhasilan = $request->presentase_keberhasilan;
-       $pengelolaan->estimasi_jumlah_panen = $request->estimasi_jumlah_panen;
+        $data= ([
+            "tanggal_tanam" => $request->tanggal_tanam,
+            "tanggal_panen" => $request->tanggal_panen,
+            "jenis_bibit" => $request->jenis_bibit,
+            "jenis_pupuk" => $request->jenis_pupuk,
+            "jumlah_tanam" => $request->jumlah_tanam,
+            "jumlah_panen" => $request->jumlah_panen,
+            "presentase_keberhasilan" => $request->presentase_keberhasilan,
+            "estimasi_jumlah_panen" => $request->estimasi_jumlah_panen,
+        ]);
 
-       $pengelolaan->save();
+        $pengelolaan = PengelolaanKebun::find($id);
 
-       
-    //    $pengelolaan->update([
-    //        "tanggal_tanam" => $request->input('plant'),
-    //        "tanggal_panen" => $request->input('harvest'),
-    //        "jenis_bibit" => $request->input('seed'),
-    //        "jenis_pupuk" => $request->input('fertilizer'),
-    //        "jumlah_tanam" => $request->input('plantQty'),
-    //        "jumlah_panen" => $request->input('harvestQty'),
-    //        "presentase_keberhasilan" => $request->input('persentase'),
-    //        "estimasi_jumlah_panen" => $request->input('estimasi'),
-    //    ]);
-    
+        $pengelolaan->update($data);
+
        return redirect(route('pengelolaan_perkebunan.index'));
     }
 
@@ -109,7 +110,7 @@ class PengelolaanKebunController extends Controller
         PengelolaanKebun::destroy($id);
         PengelolaanKebun::where('id', $id)->delete();
 
-        return redirect(route('pengelolaan_perkebunan.index'));
+        return redirect(route('pengelolaan_perkebunan.index'))-> with ('success', 'Data berhasil dihapus');
 
      }
  

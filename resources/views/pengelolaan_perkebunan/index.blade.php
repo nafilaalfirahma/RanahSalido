@@ -3,11 +3,12 @@
 @section('content')
   <section id="list">
     <div class="container">
-      <h1>Data Pengelolaan Perkebunan</h1>
+      <br><h1>Data Pengelolaan Perkebunan</h1>
       @if (count($pengelolaan) > 0)
+      <br><br>
         <div class="table-responsive">
-          <table class="table-striped table">
-            <thead>
+          <table class="table  table-hover table-striped table-bordered">
+            <thead class="table-dark">
               <tr style="text-align: center; vertical-align: middle;">
                 <th>Tanggal Tanam</th>
                 <th>Tanggal Panen</th>

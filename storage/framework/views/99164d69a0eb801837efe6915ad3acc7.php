@@ -1,22 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Ranah Salido</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-</head>
-
-<body>
-
     <?php echo $__env->make('layouts.navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     <!-- Carousel di Bagian Atas -->
     <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active" data-bs-interval="9500">
-                <img src="carousel1.png" class="d-block w-100" alt="...">
+            <img src="<?php echo e(asset('assets/carousel1.jpg')); ?>" class="d-block w-100" alt="foto kebun ranah salido">
 
                 <!-- Caption di dalemnya -->
                 <div class="carousel-caption d-none d-md-block">
@@ -27,7 +14,7 @@
             </div>
 
             <div class="carousel-item" data-bs-interval="9500">
-                <img src="carousel2.png" class="d-block w-100" alt="...">
+            <img src="<?php echo e(asset('assets/carousel2.png')); ?>" class="d-block w-100" alt="foto kebun ranah salido">
 
                 <!-- Caption di dalemnya -->
                 <div class="carousel-caption d-none d-md-block">
@@ -37,7 +24,7 @@
             </div>
 
             <div class="carousel-item" data-bs-interval="9500">
-                <img src="carousel3.png" class="d-block w-100" alt="...">
+            <img src="<?php echo e(asset('assets/carousel3.jpg')); ?>" class="d-block w-100" alt="foto kebun ranah salido">
 
                 <!-- Caption di dalemnya -->
                 <div class="carousel-caption d-none d-md-block">
@@ -47,7 +34,7 @@
             </div>
 
             <div class="carousel-item" data-bs-interval="9500">
-                <img src="carousel4.png" class="d-block w-100" alt="...">
+            <img src="<?php echo e(asset('assets/carousel4.png')); ?>" class="d-block w-100" alt="foto kebun ranah salido">
 
                 <!-- Caption di dalemnya -->
                 <div class="carousel-caption d-none d-md-block">
@@ -57,7 +44,7 @@
             </div>
 
             <div class="carousel-item" data-bs-interval="9500">
-                <img src="carousel5.png" class="d-block w-100" alt="...">
+            <img src="<?php echo e(asset('assets/carousel5.jpg')); ?>" class="d-block w-100" alt="foto kebun ranah salido">
 
                 <!-- Caption di dalemnya -->
                 <div class="carousel-caption d-none d-md-block">
@@ -96,7 +83,7 @@
                     <div class="card-body">
                         <h4 class="card-title text-center">Jumlah Pekerja & Petani</h4>
                         <center>
-                            <img src="pekerja.png" alt="Logo" width="80" height="80" class="d-inline-block">
+                            <img src="<?php echo e(asset('assets/IconUser.png')); ?>" alt="Logo" width="80" height="80" class="d-inline-block">
                             <br>
                             <h1>350</h1>
                     </div>
@@ -109,7 +96,7 @@
                     <div class="card-body">
                         <h4 class="card-title text-center">Jenis Bibit</h4>
                         <center>
-                            <img src="bibit.png" alt="Logo" width="80" height="80" class="d-inline-block">
+                        <img src="<?php echo e(asset('assets/weed.png')); ?>" alt="Logo" width="80" height="80" class="d-inline-block">
                             <br>
                             <h1>3</h1>
                     </div>
@@ -122,7 +109,7 @@
                     <div class="card-body">
                         <h4 class="card-title text-center">Luas Lahan</h4>
                         <center>
-                            <img src="lahan.png" alt="Logo" width="80" height="80" class="d-inline-block">
+                        <img src="<?php echo e(asset('assets/Logo_RS.png')); ?>" alt="Logo" width="80" height="80" class="d-inline-block">
                             <br>
                             <h1>56.850 ha</h1>
                     </div>
@@ -217,6 +204,5 @@
                 integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
                 crossorigin="anonymous">
             </script>
-</body>
 
-</html><?php /**PATH C:\xampp\htdocs\RanahSalido\resources\views/home_awal.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\RanahSalido\resources\views/home_awal.blade.php ENDPATH**/ ?>

@@ -26,14 +26,9 @@
       </button>
       <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
         <!-- Headernya Sidebar -->
-        <div class="offcanvas-header">
-<<<<<<< HEAD
+        <div class="offcanvas-header mt-5" >
           <img src="{{ asset('assets/IconUser.png') }}" alt="Logo" width="50" height="50" class="d-inline-block align-text-top">
-          <a class="nav-link" aria-current="page" href="userProfile.php">
-=======
-          <img src="IconUser.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-top">
           <a class="nav-link" aria-current="page" href="{{ route('login') }}">
->>>>>>> 6d1aacaeabe770f486de6dfd4773b63f7c5cc168
             <h5 class="offcanvas-title" id="offcanvasNavbarLabel">User Profile</h5>
           </a>
 
@@ -43,11 +38,7 @@
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item">
-<<<<<<< HEAD
-              <a class="nav-link" aria-current="page" href="dashboardRanahSalido.php"><img src="{{ asset('assets/favicon.ico') }}"
-=======
-              <a class="nav-link" aria-current="page" href="#"><img src="dashboard.png"
->>>>>>> 6d1aacaeabe770f486de6dfd4773b63f7c5cc168
+              <a class="nav-link" aria-current="page" href="#"><img src="{{ asset('assets/favicon.ico') }}"
                   alt="Logo" width="30" height="25" class="d-inline-block align-text-bottom"><b>Dashboard</b></a>
             </li>
 
