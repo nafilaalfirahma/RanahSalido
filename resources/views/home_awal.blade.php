@@ -141,26 +141,25 @@
 
         <!-- Visi Misi -->
         <div class="container mt-4">
-            <div class="row">
-                <div class="col-md-6">
+            <!-- <div class="row"> -->
+                <div class="card text-center">
                     <!-- Kolom 1 -->
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title text-center">Visi</h4>
                             <center>
                                 <br>
-                                <h3>"Menjadi kelompok tani pengelola perkebunan kelapa sawit yang unggul dan berkelanjutan,
-                                    memberikan
-                                    kontribusi positif bagi kesejahteraan anggota, meningkatkan produktivitas perkebunan,
+                                <h5>"Menjadi kelompok tani pengelola perkebunan kelapa sawit yang unggul dan berkelanjutan,
+                                    memberikan kontribusi positif bagi kesejahteraan anggota, meningkatkan produktivitas perkebunan,
                                     dan berperan aktif
-                                    dalam pelestarian lingkungan serta pembangunan komunitas."</h3>
+                                    dalam pelestarian lingkungan serta pembangunan komunitas."</h5>
                         </div>
                     </div>
                 </div>
                 <br>
-                <br>
 
-                <div class="col-md-6">
+
+                <div class="card text-center">
                     <!-- Kolom 2 -->
                     <div class="card">
                         <div class="card-body">

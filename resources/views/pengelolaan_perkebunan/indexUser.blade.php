@@ -20,7 +20,6 @@
                 <th>Estimasi Panen (ton)</th>
                 <th>Jumlah Panen (ton)</th>
                 <th>Persentase Keberhasilan (%)</th>
-                <!-- <th>Ubah</th> -->
               </tr>
             </thead>
             <tbody>
@@ -34,7 +33,6 @@
                   <td>{{ $kebun->estimasi_jumlah_panen }}</td>
                   <td>{{ $kebun->jumlah_panen }}</td>
                   <td>{{ $kebun->presentase_keberhasilan }}</td>
-                  <!-- <td><a type="submit" class="btn btn-primary" href="{{ route('pengelolaan_perkebunan.edit', ['id' => $kebun->id]) }}">Edit</a> <a type="submit" class="btn btn-danger" href="{{ route('pengelolaan_perkebunan.destroy', ['id' => $kebun->id]) }}">Hapus</a></td> -->
                 </tr>
               @endforeach
             </tbody>
@@ -44,6 +42,8 @@
         <p>Tidak ada Data Pengelolaan Kebun.</p>
       @endif
     </div>
+    <br><br>
+    <center><a href="{{ route('index') }}" class="btn btn-success">Kembali ke Beranda</a>
   </section>
   @endsection
 
