@@ -1,5 +1,3 @@
-
-
     <?php $__env->startSection('content'); ?>
     <br>
     <div class="container mt-5">

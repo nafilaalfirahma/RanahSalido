@@ -28,6 +28,7 @@
         <!-- Headernya Sidebar -->
         <div class="offcanvas-header mt-5" >
           <img src="<?php echo e(asset('assets/IconUser.png')); ?>" alt="Logo" width="50" height="50" class="d-inline-block align-text-top">
+          <a class="nav-link" aria-current="page" href="">
           <a class="nav-link" aria-current="page" href="<?php echo e(route('login')); ?>">
 
             <h5 class="offcanvas-title" id="offcanvasNavbarLabel">User Profile</h5>
