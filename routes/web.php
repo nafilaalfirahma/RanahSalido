@@ -27,9 +27,9 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', function () {
     return view('home_awal');});
 
-Route::get('/', [SessionController::class, 'index'])->name('home');
+Route::get('/', [SessionController::class, 'index'])->name('index');
 
-Route::get('/', [SessionController::class, 'indexLogin'])->name('indexLogin');
+Route::get('home_awal', [SessionController::class, 'indexLogin'])->name('indexLogin');
 
 Route::post('/home', [SessionController::class, 'login'])->name('login');
 
@@ -76,6 +76,10 @@ Route::delete('/pemesanan/{id}', [PengajuanPemesananController::class, 'destroy'
 Route::get('/informasi_pasar/create', [InformasiPasarController::class, 'create'])->name('informasi_pasar.create');
 
 Route::post('/informasi_pasar/store', [InformasiPasarController::class, 'store'])->name('informasi_pasar.store');
+
+Route::get('/informasi_pasar/show', [InformasiPasarController::class, 'show'])->name('informasi_pasar.show');
+
+Route::get('/informasi_pasar/edit', [InformasiPasarController::class, 'edit'])->name('informasi_pasar.edit');
 
 Route::get('/informasi_pasar/index', [InformasiPasarController::class, 'index'])->name('informasi_pasar.index');
 
@@ -167,3 +171,7 @@ Route::prefix('admin')->group(function () {
 // Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

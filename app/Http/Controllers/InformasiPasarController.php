@@ -23,11 +23,11 @@ class InformasiPasarController extends Controller
     {
         // Validasi input jika diperlukan
         $validatedData = $request->validate([
-            'periode_waktu' => 'required',
-            'jenis_sawit' => 'required',
-            'lokasi' => 'required',
-            'harga_per_kilo' => 'required|numeric',
-            'analisis_pasar' => 'required',
+            'periode_waktu' => ['required', 'date'],
+            'jenis_sawit' => ['required','string'],
+            'lokasi' => ['required', 'string'],
+            'harga_per_kilo' => ['required','integer'],
+            'analisis_pasar' => ['required','string'],
         ]);
 
         InformasiPasar::create($validatedData);
