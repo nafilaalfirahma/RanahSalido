@@ -73,7 +73,7 @@
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="{{ route('pemesanan.create') }}"><img src="{{ asset('assets/cart.png') }}" alt="Logo" width="25"
                       height="25" class="d-inline-block align-text-bottom"><b>Form Pemesanan</b></a></li>
-                <li><a class="dropdown-item" href="formPengajuanKerjasama.php"><img src="{{ asset('assets/deal.png') }}" alt="Logo" width="30"
+                <li><a class="dropdown-item" href="{{ route('kerjasama.create') }}"><img src="{{ asset('assets/deal.png') }}" alt="Logo" width="30"
                       height="30" class="d-inline-block align-text-bottom"><b>Form Pengajuan Kerjasama</b></a></li>
               </ul>
             </li>

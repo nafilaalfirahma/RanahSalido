@@ -5,6 +5,7 @@ use App\Http\Controllers\PengelolaanKebunController;
 use App\Http\Controllers\InformasiPasarController;
 use App\Http\Controllers\PetaPersebaranController;
 use App\Http\Controllers\PengajuanPemesananController;
+use App\Http\Controllers\KerjasamaInvestorController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController as AuthRegisterController;
 use App\Http\Controllers\HomeController;
@@ -79,6 +80,19 @@ Route::post('/pemesanan/replace/{id}', [PengajuanPemesananController::class, 're
 Route::get('/pemesanan/detailsPengajuan/{id}', [PengajuanPemesananController::class, 'show'])->name('pemesanan.show');
 
 Route::delete('/pemesanan/{id}', [PengajuanPemesananController::class, 'destroy'])->name('pemesanan.destroy');
+
+// Route Kerjasama 
+Route::get('/kerjasama/create', [KerjasamaInvestorController::class, 'create'])->name('kerjasama.create');
+
+Route::post('/kerjasama/store', [KerjasamaInvestorController::class, 'store'])->name('kerjasama.store');
+
+Route::get('/kerjasama/index', [KerjasamaInvestorController::class, 'index'])->name('kerjasama.index');
+
+Route::get('/kerjasama/update/{id}', [KerjasamaInvestorController::class, 'update'])->name('kerjasama.update');
+
+Route::post('/kerjasama/replace/{id}', [KerjasamaInvestorController::class, 'replace'])->name('kerjasama.replace');
+
+Route::delete('/kerjasama/{id}', [KerjasamaInvestorController::class, 'destroy'])->name('kerjasama.destroy');
 
 // Route Informasi Pasar
 Route::get('/informasi_pasar/create', [InformasiPasarController::class, 'create'])->name('informasi_pasar.create');
