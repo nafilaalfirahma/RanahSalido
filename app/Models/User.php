@@ -23,7 +23,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'type'
+        'usertype'
     ];
 
     /**
@@ -46,10 +46,10 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    protected function userType(): Attribute {
-        return new Attribute(
-            get: fn ($value) => ["user", "admin"] [$value],
-        );
-     }
+    // protected function userType(): Attribute {
+    //     return new Attribute(
+    //         get: fn ($value) => ["user", "admin"] [$value],
+    //     );
+    //  }
      
 }

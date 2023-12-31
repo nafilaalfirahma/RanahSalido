@@ -12,25 +12,17 @@ class PengajuanPemesananController extends Controller
 {
     //views
 
-    public function indexUser(){
+    // public function indexUser(){
 
-        $userId = Auth::id(); // Get the ID of the currently authenticated user
-        $pemesanans = PengajuanPemesanan::where('user_id', $userId)->get(); // Get the orders of the user
+    //     $userId = Auth::id(); // Get the ID of the currently authenticated user
+    //     $pemesanans = PengajuanPemesanan::where('user_id', $userId)->get(); // Get the orders of the user
 
-        return view('pemesanan/indexUser', compact('pemesanans'));
+    //     return view('pemesanan/indexUser', compact('pemesanans'));
         
-        // $pemesanans = PengajuanPemesanan::all();
-        // return view('pemesanan/indexUser', compact('pemesanans'));
+    //     // $pemesanans = PengajuanPemesanan::all();
+    //     // return view('pemesanan/indexUser', compact('pemesanans'));
     
-    }
-
-    public function indexAdmin(){
-
-        $pemesanans = PengajuanPemesanan::all();
-
-        return view('pemesanan.index', compact('pemesanans'));
-    
-    }
+    // }
 
     //Create 
     public function create(){
@@ -39,7 +31,7 @@ class PengajuanPemesananController extends Controller
     
     public function store(Request $request){
 
-        if (Auth::check()) {
+        // if (Auth::check()) {
         
             $data = $request->validate([
                 'nama' => ['required' , 'String'],
@@ -61,18 +53,26 @@ class PengajuanPemesananController extends Controller
 
             ]);
 
-
-            return redirect(route('pemesanan.index.user'));
+            session()->flash('message', 'Pemesanan berhasil diajukan!');
+            return redirect(route('pemesanan.create'));
  
-        } else { 
+        // } else { 
 
-            return redirect()->route('login');
-        }
+        //     return redirect()->route('login');
+        // }
 
         Log::info('Store method called');
         Log::info('Received data: ', $request->all());
        
 
+    }
+
+    public function index(){
+
+        $pemesanans = PengajuanPemesanan::all();
+
+        return view('pemesanan.index', compact('pemesanans'));
+    
     }
 
     // show update page
@@ -95,7 +95,7 @@ class PengajuanPemesananController extends Controller
 
         $pemesanan->save();
 
-        return redirect(route('pemesanan.index.admin'));
+        return redirect(route('pemesanan.index'));
 
     }
     
@@ -104,19 +104,11 @@ class PengajuanPemesananController extends Controller
       $pemesanan = PengajuanPemesanan::findOrFail($id);
       $pemesanan->delete();
 
-      return redirect(route('pemesanan.index.admin'));
+      return redirect(route('pemesanan.index'));
 
 
     }
    
-   // Show Detail Pemesanan
-   public function show($id) {
-
-        $pemesanan = PengajuanPemesanan::findOrFail($id);
-        return view('pemesanan/detailPengajuan', compact('pemesanan'));
-
-    }
-
     
 
 }

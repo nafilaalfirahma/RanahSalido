@@ -4,7 +4,8 @@
 <br>
 <div class="container mt-5">
    <br>
-   <h2 class="text-center">Login Form</h2>
+   <h1 class="text-center">Admin Page</h1>
+   <h2 class="text-center">Login</h2>
 
    <!-- Form Login -->
    <form method="POST" action="{{ route('login') }}">

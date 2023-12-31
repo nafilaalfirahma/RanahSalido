@@ -7,8 +7,6 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
-use App\Models\User;
 
 class LoginController extends Controller
 {
@@ -30,7 +28,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = '/adminHome';
 
     /**
      * Create a new controller instance.
@@ -40,31 +38,6 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
-    }
-
-    public function register(Request $request)
-    {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|string|min:8|confirmed',
-        ]);
-  
-        $user = new User;
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->password = Hash::make($request->password);
-        $user->save();
-  
-        Auth::login($user);
-  
-        return redirect()->route('dashboard')
-            ->withSuccess('You have successfully registered & logged in!');
-    }
-
-    public function registerForm()
-    {
-        return view('register');
     }
 
 
@@ -106,7 +79,7 @@ class LoginController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/home_awal')->with('status', 'You have been successfully logged out!');
+        return redirect('/home')->with('status', 'You have been successfully logged out!');
     }
 
 }
