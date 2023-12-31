@@ -17,13 +17,10 @@
             <div class="carousel-item active" data-bs-interval="9500">
             <img src="<?php echo e(asset('assets/carousel1.jpg')); ?>" class="d-block w-100" alt="foto kebun ranah salido">
 
-                <!-- Caption di dalemnya -->
-                <div class="carousel-caption d-none d-md-block">
-                    <!--                     <h5>First slide label</h5>
-                    <p>Some representative placeholder content for the first slide.</p> -->
                 </div>
 
-            </div>
+                <div class="carousel-item" data-bs-interval="9500">
+                <img src="<?php echo e(asset('assets/carousel2.png')); ?>" class="d-block w-100" alt="foto kebun ranah salido">
 
             <div class="carousel-item" data-bs-interval="9500">
             <img src="<?php echo e(asset('assets/carousel2.png')); ?>" class="d-block w-100" alt="foto kebun ranah salido">
@@ -100,7 +97,6 @@
                             <h1>350</h1>
                     </div>
                 </div>
-            </div>
 
             <div class="col-md-4">
                 <!-- Kolom 2 -->
@@ -113,7 +109,6 @@
                             <h1>3</h1>
                     </div>
                 </div>
-            </div>
 
             <div class="col-md-4">
                 <!-- Kolom 3 -->
@@ -128,71 +123,84 @@
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Profil Perusahaan -->
-    <br>
-    <div class="card text-center">
-        <div class="card-body">
-            <h3>Visi & Misi</h3>
+        <!-- Profil Perusahaan -->
+        <br>
+        <div class="card text-center">
+            <div class="card-body">
+                <h3>Visi & Misi</h3>
+            </div>
         </div>
-    </div>
 
-    <!-- Visi Misi -->
-    <div class="container mt-4">
-        <div class="row">
-            <div class="col-md-6">
-                <!-- Kolom 1 -->
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title text-center">Visi</h4>
-                        <center>
+        <!-- Visi Misi -->
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <!-- Kolom 1 -->
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title text-center">Visi</h4>
+                            <center>
+                                <br>
+                                <h3>"Menjadi kelompok tani pengelola perkebunan kelapa sawit yang unggul dan berkelanjutan,
+                                    memberikan
+                                    kontribusi positif bagi kesejahteraan anggota, meningkatkan produktivitas perkebunan,
+                                    dan berperan aktif
+                                    dalam pelestarian lingkungan serta pembangunan komunitas."</h3>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+
+                <div class="col-md-6">
+                    <!-- Kolom 2 -->
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title text-center">Misi</h4>
                             <br>
-                            <h3>"Menjadi kelompok tani pengelola perkebunan kelapa sawit yang unggul dan berkelanjutan,
-                                memberikan
-                                kontribusi positif bagi kesejahteraan anggota, meningkatkan produktivitas perkebunan,
-                                dan berperan aktif
-                                dalam pelestarian lingkungan serta pembangunan komunitas."</h3>
+                            <h6>1. Melakukan pengelolaan perkebunan kelapa sawit secara berkelanjutan dengan menerapkan
+                                praktik
+                                pertanian yang ramah lingkungan, memperhatikan keseimbangan ekosistem dan menjaga
+                                keberlanjutan produksi.
+                            </h6>
+                            <br>
+                            <h6>2. Mendorong partisipasi aktif anggota dalam pengambilan keputusan kelompok dan pengembangan
+                                inisiatif
+                                bersama.</h6>
+                            <br>
+                            <h6>3. Membangun kemitraan yang kuat dengan pihak terkait, termasuk pemerintah, lembaga riset
+                                pertanian, dan
+                                pelaku industri, guna mendukung pertumbuhan dan pengembangan kelompok tani.</h6>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <br>
-            <br>
+                <br>
 
-            <div class="col-md-6">
-                <!-- Kolom 2 -->
-                <div class="card">
+                <br>
+                <!-- Sejarah Perusahaan -->
+                <br>
+                <div class="card text-center">
                     <div class="card-body">
-                        <h4 class="card-title text-center">Misi</h4>
+                        <h3>Sejarah Perusahaan</h3>
                         <br>
-                        <h6>1. Melakukan pengelolaan perkebunan kelapa sawit secara berkelanjutan dengan menerapkan
-                            praktik
-                            pertanian yang ramah lingkungan, memperhatikan keseimbangan ekosistem dan menjaga
-                            keberlanjutan produksi.
-                        </h6>
+                        <p class="card-text">Deskripsi sejarah perusahaan dan perjalanan kelompok tani dapat ditambahkan di
+                            sini.</p>
                         <br>
-                        <h6>2. Mendorong partisipasi aktif anggota dalam pengambilan keputusan kelompok dan pengembangan
-                            inisiatif
-                            bersama.</h6>
-                        <br>
-                        <h6>3. Membangun kemitraan yang kuat dengan pihak terkait, termasuk pemerintah, lembaga riset
-                            pertanian, dan
-                            pelaku industri, guna mendukung pertumbuhan dan pengembangan kelompok tani.</h6>
                     </div>
                 </div>
-            </div>
-            <br>
 
-            <br>
-            <!-- Sejarah Perusahaan -->
-            <br>
-            <div class="card text-center">
-                <div class="card-body">
-                    <h3>Sejarah Perusahaan</h3>
-                    <br>
-                    <p class="card-text">Deskripsi sejarah perusahaan dan perjalanan kelompok tani dapat ditambahkan di
-                        sini.</p>
-                    <br>
+                <br>
+                <!-- Kontak Perusahaan -->
+                <br>
+                <div class="card text-center bg-success text-white">
+                    <div class="card-body">
+                        <h3>Hubungi Kami</h3>
+                        <br>
+                        <p class="card-text">Alamat: Jl. Contoh No. 123, Kota Contoh</p>
+                        <p class="card-text">Telepon: (012) 345-6789</p>
+                        <p class="card-text">Email: info@rantanisalido.com</p>
+                    </div>
                 </div>
             </div>
 

@@ -8,7 +8,8 @@
 </head>
 <body> 
 
-    @include('layouts.app')
+    @extends('layouts.layout')
+    @section('content')
     <div class="container">
         <h1 class="mt-4">Daftar Harga Pasar</h1>
         <a href="{{ route('informasi_pasar.create') }}" class="btn btn-success mb-3">Tambah Data</a>
@@ -50,3 +51,4 @@
     
 </body>
 </html>
+@endsection

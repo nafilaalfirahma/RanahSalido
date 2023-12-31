@@ -16,6 +16,8 @@
       <!-- Logo dan Brand Ranah Salidonya -->
       <a class="navbar-brand" href="">
       <img src="<?php echo e(asset('assets/LogoNavbar.png')); ?>" alt="Logo" width="50" height="30" class="d-inline-block align-text-top">
+      <a class="navbar-brand" href="<?php echo e(route('indexLogin')); ?>">
+      <img src="<?php echo e(asset('assets/LogoNavbar.png')); ?>" alt="Logo" width="50" height="30" class="d-inline-block align-text-top">
         <b>Ranah Salido</b>
       </a>
 
@@ -27,13 +29,10 @@
       <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
         <!-- Headernya Sidebar -->
         <div class="offcanvas-header">
-<<<<<<< HEAD
+
           <img src="<?php echo e(asset('assets/IconUser.png')); ?>" alt="Logo" width="50" height="50" class="d-inline-block align-text-top">
           <a class="nav-link" aria-current="page" href="userProfile.php">
-=======
-          <img src="IconUser.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-top">
-          <a class="nav-link" aria-current="page" href="<?php echo e(route('login')); ?>">
->>>>>>> 6d1aacaeabe770f486de6dfd4773b63f7c5cc168
+          <a class="nav-link" aria-current="page" href="">
             <h5 class="offcanvas-title" id="offcanvasNavbarLabel">User Profile</h5>
           </a>
 
@@ -43,11 +42,7 @@
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item">
-<<<<<<< HEAD
               <a class="nav-link" aria-current="page" href="dashboardRanahSalido.php"><img src="<?php echo e(asset('assets/favicon.ico')); ?>"
-=======
-              <a class="nav-link" aria-current="page" href="#"><img src="dashboard.png"
->>>>>>> 6d1aacaeabe770f486de6dfd4773b63f7c5cc168
                   alt="Logo" width="30" height="25" class="d-inline-block align-text-bottom"><b>Dashboard</b></a>
             </li>
 
@@ -83,6 +78,8 @@
                       height="25" class="d-inline-block align-text-bottom"><b>Form Pemesanan</b></a></li>
                 <li><a class="dropdown-item" href="<?php echo e(route('kerjasama.create')); ?>"><img src="<?php echo e(asset('assets/deal.png')); ?>" alt="Logo" width="30"
                       height="30" class="d-inline-block align-text-bottom"><b>Form Kerjasama Investor</b></a></li>
+                <li><a class="dropdown-item" href="formPengajuanKerjasama.php"><img src="<?php echo e(asset('assets/deal.png')); ?>" alt="Logo" width="30"
+                      height="30" class="d-inline-block align-text-bottom"><b>Form Pengajuan Kerjasama</b></a></li>
               </ul>
             </li>
           </ul>

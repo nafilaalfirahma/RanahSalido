@@ -35,6 +35,16 @@
             <button type="submit" class="btn btn-success" >Update Pemesanan</button>
         </form>
 
+        @if (session('message'))
+            <script type="text/javascript">
+            Swal.fire({
+            icon: 'success',
+            title: 'Berhasil',
+            text: "{{ session('message') }}",
+            confirmButtonText: 'OK'
+                })
+            </script>
+        @endif
 
         @if ($errors->any())
      <div class="alert alert-danger">

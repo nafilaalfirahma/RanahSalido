@@ -23,7 +23,7 @@
             <h5 class="card-title">Jumlah (ton): </h5>
             <p class="card-text">{{ $pemesanan->jumlah_ton }}</p>
 
-            <a href="{{ route('pemesanan.index.user') }}" class="btn btn-success">Kembali</a>
+            <a href="{{ route('pemesanan.show') }}" class="btn btn-success">Kembali</a>
         </div>
         <div class="card-footer text-body-secondary">
             {{ $pemesanan->updated_at }}
