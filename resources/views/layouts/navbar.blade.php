@@ -29,11 +29,7 @@
         <div class="offcanvas-header">
 <<<<<<< HEAD
           <img src="{{ asset('assets/IconUser.png') }}" alt="Logo" width="50" height="50" class="d-inline-block align-text-top">
-          <a class="nav-link" aria-current="page" href="userProfile.php">
-=======
-          <img src="IconUser.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-top">
-          <a class="nav-link" aria-current="page" href="{{ route('index') }}">
->>>>>>> 6d1aacaeabe770f486de6dfd4773b63f7c5cc168
+          <a class="nav-link" aria-current="page" href="">
             <h5 class="offcanvas-title" id="offcanvasNavbarLabel">User Profile</h5>
           </a>
 

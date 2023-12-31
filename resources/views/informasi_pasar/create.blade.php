@@ -8,7 +8,7 @@
 </head>
 <body> 
 
-    @include('layouts.app')
+    @extends('layouts.layout')
     @section('content')
     <div class="container">
         <h1 class="mt-4">Tambah Data Harga Pasar</h1>
@@ -18,7 +18,7 @@
 
             <div class="form-group">
                 <label for="periode_waktu">Periode Waktu</label>
-                <input type="text" class="form-control" id="periode_waktu" name="periode_waktu" required>
+                <input type="date" class="form-control" id="periode_waktu" name="periode_waktu" required>
             </div>
 
             <div class="form-group">

@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Pemesanan Kelapa Sawit</title>
+    <title>Informasi Pasar dan Harga</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body> 
 
-    @include('layouts.app')
+    @extends('layouts.layout')
+    @section('content')
     <div class="container">
         <h1 class="mt-4">Detail Harga Pasar</h1>
 
@@ -29,11 +30,12 @@
             <dd class="col-sm-9">{{ $hargaPasar->analisis_pasar }}</dd>
         </dl>
 
-        <a href="{{ route('admin.harga_pasar.edit', $hargaPasar->id) }}" class="btn btn-warning">Edit</a>
+        <a href="{{ route('harga_pasar.edit', $hargaPasar->id) }}" class="btn btn-warning">Edit</a>
 
-        <form action="{{ route('admin.harga_pasar.destroy', $hargaPasar->id) }}" method="POST" class="d-inline">
+        <form action="{{ route('harga_pasar.destroy', $hargaPasar->id) }}" method="POST" class="d-inline">
             @csrf
             @method('DELETE')
             <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data?')">Hapus</button>
         </form>
     </div>
+@endsection
