@@ -14,7 +14,7 @@
     <div class="container-fluid">
 
       <!-- Logo dan Brand Ranah Salidonya -->
-      <a class="navbar-brand" href="">
+      <a class="navbar-brand" href="{{ route('indexLogin')}}">
       <img src="{{ asset('assets/LogoNavbar.png') }}" alt="Logo" width="50" height="30" class="d-inline-block align-text-top">
         <b>Ranah Salido</b>
       </a>
@@ -32,7 +32,7 @@
           <a class="nav-link" aria-current="page" href="userProfile.php">
 =======
           <img src="IconUser.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-top">
-          <a class="nav-link" aria-current="page" href="{{ route('login') }}">
+          <a class="nav-link" aria-current="page" href="{{ route('index') }}">
 >>>>>>> 6d1aacaeabe770f486de6dfd4773b63f7c5cc168
             <h5 class="offcanvas-title" id="offcanvasNavbarLabel">User Profile</h5>
           </a>

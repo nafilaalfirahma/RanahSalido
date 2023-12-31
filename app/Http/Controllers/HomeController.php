@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class HomeController extends Controller
 {
@@ -23,17 +25,17 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('home_awal');
     }
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
+
+   
     public function adminHome() {
 
         return view('adminHome');
     }
 
-    
+    public function userHome() {
+
+        return view('home');
+    }
 }

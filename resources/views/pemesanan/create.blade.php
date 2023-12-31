@@ -39,12 +39,16 @@
             <button type="submit" class="btn btn-success">Ajukan Pemesanan</button>
         </form>
 
-        <!-- Session Error belum login  -->
-        @if (session('error'))
+        @if (session('message'))
             <script type="text/javascript">
-                alert("{{ session('error') }}");
+            Swal.fire({
+            icon: 'success',
+            title: 'Berhasil',
+            text: "{{ session('message') }}",
+            confirmButtonText: 'OK'
+                })
             </script>
-        @endif
+            @endif
 
 
         @if ($errors->any())
