@@ -29,16 +29,17 @@
                     <!-- Card 1 -->
                     <div class="col-md-4">
                         <div class="card">
-                            <h5>Informasi Pasar</h5>
                             <br>
-                            <a type="submit" class="btn btn-success" href=""></a>
+                            <h5 style="text-align: center; vertical-align: middle;">Informasi Pasar</h5>
+                            <br>
+                            <a type="submit" class="btn btn-success" href="">-</a>
                         </div>
                     </div>
                     <!-- Card 2 -->
                     <div class="col-md-4">
                         <div class="card">
                             <!-- Card content -->
-                            <h5>Pengelolaan Perkebunan</h5>
+                            <br><h5>Pengelolaan Perkebunan</h5>
                             <br>
                             <a type="submit" class="btn btn-success" href="{{ route('pengelolaan_perkebunan.index') }}">Kelola Data</a>
                         </div>
@@ -47,22 +48,22 @@
                     <div class="col-md-4">
                         <div class="card">
                             <!-- Card content -->
-                            <h5>Peta Sebaran</h5>
+                            <br><h5>Peta Sebaran</h5>
                             <br>
-                            <a type="submit" class="btn btn-success" href=""></a>
+                            <a type="submit" class="btn btn-success" href="">-</a>
                         </div>
                     </div>
                 </div>
                 </div>
 
                 <!-- New row for the remaining cards -->
-                <center>
-                <div class="container mt-4">
-                <div class="row">
+                
+                <div class="container mt-4" text-alignment="center">
+                    <div class="row">
                     <!-- Card 4 -->
                     <div class="col-md-4">
                         <div class="card">
-                            <h5>Riwayat Pengajuan Pemesanan</h5>
+                            <br><h5>Riwayat Pengajuan Pemesanan</h5>
                             <br>
                             <a type="submit" class="btn btn-success" href="{{ route('pemesanan.index') }}">List Pengajuan Pemesanan</a>
                         </div>
@@ -70,9 +71,9 @@
                     <!-- Card 5 -->
                     <div class="col-md-4">
                         <div class="card">
-                            <h5>Riwayat Pengajuan Kerjasama</h5>
+                            <br><h5>Riwayat Pengajuan Kerjasama</h5>
                             <br>
-                            <a type="submit" class="btn btn-success" href=""></a>
+                            <a type="submit" class="btn btn-success" href="">-</a>
                         </div>
                     </div>
                 </div>

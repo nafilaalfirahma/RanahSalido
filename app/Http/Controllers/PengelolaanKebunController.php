@@ -12,13 +12,15 @@ class PengelolaanKebunController extends Controller
      */
     public function index()
     {
-        $pengelolaan = PengelolaanKebun::all(); //ambil data 
+        $pengelolaan = PengelolaanKebun::orderBy('tanggal_tanam', 'asc')->get();
+
         return view('pengelolaan_perkebunan.index', compact('pengelolaan')); 
     }
 
     public function indexUser()
     {
-        $pengelolaan = PengelolaanKebun::all(); //ambil data 
+        // $pengelolaan = PengelolaanKebun::all(); //ambil data 
+        $pengelolaan = PengelolaanKebun::orderBy('tanggal_tanam', 'asc')->get();
         return view('pengelolaan_perkebunan.indexUser', compact('pengelolaan')); 
     }
 

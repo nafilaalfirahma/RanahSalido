@@ -7,6 +7,8 @@
     <title>Dashboard Ranah Salido</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
 </head>
 
 <body
@@ -97,8 +99,7 @@
                         <div class="card-body">
                             <h4 class="card-title text-center">Jumlah Pekerja & Petani</h4>
                             <center>
-                                <img src="{{ asset('assets/IconUser.png') }}" alt="Logo" width="80" height="80" class="d-inline-block">
-                                <br>
+                            <i class="fa-solid fa-person fa-7x"></i>                                <br>
                                 <h1>350</h1>
                         </div>
                     </div>
@@ -110,8 +111,7 @@
                         <div class="card-body">
                             <h4 class="card-title text-center">Jenis Bibit</h4>
                             <center>
-                            <img src="{{ asset('assets/weed.png') }}" alt="Logo" width="80" height="80" class="d-inline-block">
-                                <br>
+                            <i class="fa-solid fa-seedling fa-7x"></i>                                <br>
                                 <h1>3</h1>
                         </div>
                     </div>
@@ -123,8 +123,7 @@
                         <div class="card-body">
                             <h4 class="card-title text-center">Luas Lahan</h4>
                             <center>
-                            <img src="{{ asset('assets/Logo_RS.png') }}" alt="Logo" width="80" height="80" class="d-inline-block">
-                                <br>
+                            <i class="fa-solid fa-earth-americas fa-7x"></i>                                <br>
                                 <h1>56.850 ha</h1>
                         </div>
                     </div>
