@@ -1,6 +1,16 @@
 @extends('layouts.layout')
 
 @section('content')
+@if(session('success'))
+<div class= "alert alert-success mt-5 mx-5">
+  {{session('success')}}
+</div>
+@endif
+@if(session('danger'))
+<div class= "alert alert-success mt-5 mx-5">
+  {{session('danger')}}
+</div>
+@endif
   <section id="list">
     <div class="container">
       <br><h1>Data Pengelolaan Perkebunan</h1>
@@ -48,4 +58,5 @@
       </center>
     </div>
   </section>
-@endsection
+  @endsection
+

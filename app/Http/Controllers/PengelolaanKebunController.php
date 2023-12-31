@@ -37,12 +37,12 @@ class PengelolaanKebunController extends Controller
             "jenis_pupuk" => $data['jenis_pupuk']?? '-',
             "jumlah_tanam" => $data['jumlah_tanam'],
             "jumlah_panen" => $data['jumlah_panen']?? '0',
-            "presentase_keberhasilan" => $data['jumlah_panen']/($data['jumlah_tanam']*41),
+            "presentase_keberhasilan" => $data['jumlah_panen']/($data['jumlah_tanam']*41)*100,
             "estimasi_jumlah_panen" => $data['jumlah_tanam']*41,
         ]);
 
 
-        return redirect(route('pengelolaan_perkebunan.index'));
+        return redirect(route('pengelolaan_perkebunan.index'))-> with ('success', 'Data berhasil ditambahkan');
     }
 
     /**
@@ -93,7 +93,8 @@ class PengelolaanKebunController extends Controller
 
         $pengelolaan->update($data);
 
-       return redirect(route('pengelolaan_perkebunan.index'));
+        session()->flash('success', 'Record saved successfully!');
+       return redirect(route('pengelolaan_perkebunan.index'))-> with ('success', 'Data berhasil diedit');
     }
 
 
@@ -113,5 +114,5 @@ class PengelolaanKebunController extends Controller
         return redirect(route('pengelolaan_perkebunan.index'))-> with ('success', 'Data berhasil dihapus');
 
      }
- 
+     
 }
