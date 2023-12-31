@@ -15,24 +15,24 @@
 
         <dl class="row">
             <dt class="col-sm-3">Periode Waktu</dt>
-            <dd class="col-sm-9">{{ $hargaPasar->periode_waktu }}</dd>
+            <dd class="col-sm-9">{{ $InformasiPasar->periode_waktu }}</dd>
 
             <dt class="col-sm-3">Jenis Sawit</dt>
-            <dd class="col-sm-9">{{ $hargaPasar->jenis_sawit }}</dd>
+            <dd class="col-sm-9">{{ $InformasiPasar->jenis_sawit }}</dd>
 
             <dt class="col-sm-3">Lokasi</dt>
-            <dd class="col-sm-9">{{ $hargaPasar->lokasi }}</dd>
+            <dd class="col-sm-9">{{ $InformasiPasar->lokasi }}</dd>
 
             <dt class="col-sm-3">Harga per Kilo</dt>
-            <dd class="col-sm-9">{{ $hargaPasar->harga_per_kilo }}</dd>
+            <dd class="col-sm-9">{{ $InformasiPasar->harga_per_kilo }}</dd>
 
             <dt class="col-sm-3">Analisis Pasar</dt>
-            <dd class="col-sm-9">{{ $hargaPasar->analisis_pasar }}</dd>
+            <dd class="col-sm-9">{{ $InformasiPasar->analisis_pasar }}</dd>
         </dl>
 
-        <a href="{{ route('harga_pasar.edit', $hargaPasar->id) }}" class="btn btn-warning">Edit</a>
+        <a href="{{ route('informasi_pasar.edit', $InformasiPasar->id) }}" class="btn btn-warning">Edit</a>
 
-        <form action="{{ route('harga_pasar.destroy', $hargaPasar->id) }}" method="POST" class="d-inline">
+        <form action="{{ route('informasi_pasar.destroy', $InformasiPasar->id) }}" method="POST" class="d-inline">
             @csrf
             @method('DELETE')
             <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data?')">Hapus</button>

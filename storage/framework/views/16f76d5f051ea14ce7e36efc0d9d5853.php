@@ -14,8 +14,8 @@
     <div class="container-fluid">
 
       <!-- Logo dan Brand Ranah Salidonya -->
-      <a class="navbar-brand" href="{{ route('indexLogin')}}">
-      <img src="{{ asset('assets/LogoNavbar.png') }}" alt="Logo" width="50" height="30" class="d-inline-block align-text-top">
+      <a class="navbar-brand" href="<?php echo e(route('indexLogin')); ?>">
+      <img src="<?php echo e(asset('assets/LogoNavbar.png')); ?>" alt="Logo" width="50" height="30" class="d-inline-block align-text-top">
         <b>Ranah Salido</b>
       </a>
 
@@ -39,41 +39,41 @@
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item">
 
-              <a class="nav-link" aria-current="page" href="{{ route('index')}}"><img src="{{ asset('assets/favicon.ico') }}"
+              <a class="nav-link" aria-current="page" href="<?php echo e(route('index')); ?>"><img src="<?php echo e(asset('assets/favicon.ico')); ?>"
                   alt="Logo" width="30" height="25" class="d-inline-block align-text-bottom"><b>Dashboard</b></a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="{{ route('pengelolaan_perkebunan.index') }}"><img src="{{ asset('assets/weed.png') }}"
+              <a class="nav-link" aria-current="page" href="<?php echo e(route('pengelolaan_perkebunan.index')); ?>"><img src="<?php echo e(asset('assets/weed.png')); ?>"
                   alt="Logo" width="35" height="30" class="d-inline-block align-text-bottom"><b>Informasi Pengelolaan
                   Perkebunan</b></a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="profilePerusahaan.php"><img src="{{ asset('assets/office.png') }}" alt="Logo" width="30" height="30"
+              <a class="nav-link" href="profilePerusahaan.php"><img src="<?php echo e(asset('assets/office.png')); ?>" alt="Logo" width="30" height="30"
                   class="d-inline-block align-text-bottom"><b>Company Profile</b></a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="{{ route('informasi_pasar.index') }}"><img src="{{ asset('assets/cart.png') }}" alt="Logo"
+              <a class="nav-link" aria-current="page" href="<?php echo e(route('informasi_pasar.index')); ?>"><img src="<?php echo e(asset('assets/cart.png')); ?>" alt="Logo"
                   width="35" height="30" class="d-inline-block align-text-bottom"><b>Informasi Pasar</b></a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="{{ route('peta_persebaran') }}"><img src="{{ asset('assets/favicon.ico') }}"
+              <a class="nav-link" aria-current="page" href="<?php echo e(route('peta_persebaran')); ?>"><img src="<?php echo e(asset('assets/favicon.ico')); ?>"
                   alt="Logo" width="35" height="30" class="d-inline-block align-text-bottom"><b>Peta Persebaran</b></a>
             </li>
 
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                 aria-expanded="false">
-                <b><img src="{{ asset('assets/contract.png') }}" alt="Logo" width="30" height="30"
+                <b><img src="<?php echo e(asset('assets/contract.png')); ?>" alt="Logo" width="30" height="30"
                     class="d-inline-block align-text-bottom">Pengisian Form</b>
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="{{ route('pemesanan.create') }}"><img src="{{ asset('assets/cart.png') }}" alt="Logo" width="25"
+                <li><a class="dropdown-item" href="<?php echo e(route('pemesanan.create')); ?>"><img src="<?php echo e(asset('assets/cart.png')); ?>" alt="Logo" width="25"
                       height="25" class="d-inline-block align-text-bottom"><b>Form Pemesanan</b></a></li>
-                <li><a class="dropdown-item" href="formPengajuanKerjasama.php"><img src="{{ asset('assets/deal.png') }}" alt="Logo" width="30"
+                <li><a class="dropdown-item" href="formPengajuanKerjasama.php"><img src="<?php echo e(asset('assets/deal.png')); ?>" alt="Logo" width="30"
                       height="30" class="d-inline-block align-text-bottom"><b>Form Pengajuan Kerjasama</b></a></li>
               </ul>
             </li>
@@ -84,4 +84,4 @@
   </nav>
 </body>
 
-</html>
+</html><?php /**PATH C:\xampp\htdocs\RanahSalido\resources\views/layouts/navbar.blade.php ENDPATH**/ ?>

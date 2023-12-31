@@ -18,13 +18,13 @@ class UserSeeder extends Seeder
                 'name' => 'Administrator',
                 'email' => 'administrator@gmail.com',
                 'usertype' => 'admin',
-                'password' => encrypt('adminranahsalido')
+                'password' => bcrypt('adminranahsalido')
             ], 
             [
                 'name' => 'Keuangan',
                 'email' => 'keuangan@gmail.com',
                 'usertype' => 'keuangan',
-                'password' => encrypt('keuangan')
+                'password' => bcrypt('keuangan')
             ], 
 
             ];
