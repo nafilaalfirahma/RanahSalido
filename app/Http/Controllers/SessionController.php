@@ -10,6 +10,10 @@ class SessionController extends Controller
     function index() {
         return view('home_awal');
     }
+
+    function indexAdmin() {
+        return view('adminPage');
+    }
     
     function indexLogin() {
         return view('login');
@@ -28,15 +32,15 @@ class SessionController extends Controller
 
         if(auth()->attempt(array('email' => $input['email'], 'password' => $input['password'])))
         {
-                return redirect('adminHome');
+                return redirect('admin');
         }else{
             return redirect()->withErrors('Email-Address and Password are Wrong. ');
         } 
+    }
 
-        function logout() 
+    public function logout() 
         {
             Auth::logout();
             return redirect('');
         }
-    }
 }

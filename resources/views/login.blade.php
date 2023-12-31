@@ -20,7 +20,7 @@
            <input type="password" class="form-control" id="password" name="password" required>
        </div>
        <br>
-       <button type="submit" class="btn btn-success">Login</button>
+       <a type="submit" class="btn btn-success" href="{{ route('adminPage')}}">Login</a>
    </form>
 
    <!-- Session Error belum login -->

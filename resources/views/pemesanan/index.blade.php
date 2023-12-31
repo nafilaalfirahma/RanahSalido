@@ -54,6 +54,8 @@
                 </tbody>
                         
             </table>
+            <center>
+            <a href="{{ route('adminPage') }}" class="btn btn-success">Kembali ke Beranda</a>
         </div>
 
     </div>
