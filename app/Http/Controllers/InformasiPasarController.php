@@ -32,12 +32,12 @@ class InformasiPasarController extends Controller
 
         InformasiPasar::create($validatedData);
 
-        return redirect('informasi_pasar.index')->with('success', 'Data berhasil ditambahkan.');
+        return redirect('/informasi_pasar/index')->with('success', 'Data berhasil ditambahkan.');
     }
 
     public function show($id)
     {
-        $InformasiPasar = InformasiPasar::findOrFail($id);
+        $InformasiPasar = InformasiPasar::find($id);
         return view('informasi_pasar.show', compact('InformasiPasar'));
     }
 
@@ -60,14 +60,14 @@ class InformasiPasarController extends Controller
 
         InformasiPasar::whereId($id)->update($validatedData);
 
-        return redirect('informasi_pasar.index')->with('success', 'Data berhasil diperbarui.');
+        return redirect('informasi_pasar/index')->with('success', 'Data berhasil diperbarui.');
     }
 
     public function destroy($id)
     {
         InformasiPasar::findOrFail($id)->delete();
 
-        return redirect('informasi_pasar.index')->with('success', 'Data berhasil dihapus.');
+        return redirect('informasi_pasar/index')->with('success', 'Data berhasil dihapus.');
     }
 }
 

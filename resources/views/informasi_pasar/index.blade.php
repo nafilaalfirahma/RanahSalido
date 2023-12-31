@@ -33,8 +33,8 @@
                         <td>{{ $data->harga_per_kilo }}</td>
                         <td>{{ $data->analisis_pasar }}</td>
                         <td>
-                            <a href="{{ route('informasi_pasar.show', $data->id) }}" class="btn btn-info btn-sm">Detail</a>
-                            <a href="{{ route('informasi_pasar.edit', $data->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                            <a href="{{ route('informasi_pasar.show', ['id' => $data->id]) }}" class="btn btn-info btn-sm">Detail</a>
+                            <a href="{{ route('informasi_pasar.edit', ['id' => $data->id]) }}" class="btn btn-warning btn-sm">Edit</a>
                             <form action="{{ route('informasi_pasar.destroy', $data->id) }}" method="POST" class="d-inline">
                                 @csrf
                                 @method('DELETE')

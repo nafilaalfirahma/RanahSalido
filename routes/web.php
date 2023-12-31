@@ -5,6 +5,7 @@ use App\Http\Controllers\PengelolaanKebunController;
 use App\Http\Controllers\InformasiPasarController;
 use App\Http\Controllers\PetaPersebaranController;
 use App\Http\Controllers\PengajuanPemesananController;
+use App\Http\Controllers\KerjasamaInvestorController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController as AuthRegisterController;
 use App\Http\Controllers\HomeController;
@@ -81,18 +82,31 @@ Route::get('/pemesanan/detailsPengajuan/{id}', [PengajuanPemesananController::cl
 
 Route::delete('/pemesanan/{id}', [PengajuanPemesananController::class, 'destroy'])->name('pemesanan.destroy');
 
+// Route Kerjasama 
+Route::get('/kerjasama/create', [KerjasamaInvestorController::class, 'create'])->name('kerjasama.create');
+
+Route::post('/kerjasama/store', [KerjasamaInvestorController::class, 'store'])->name('kerjasama.store');
+
+Route::get('/kerjasama/index', [KerjasamaInvestorController::class, 'index'])->name('kerjasama.index');
+
+Route::get('/kerjasama/update/{id}', [KerjasamaInvestorController::class, 'update'])->name('kerjasama.update');
+
+Route::post('/kerjasama/replace/{id}', [KerjasamaInvestorController::class, 'replace'])->name('kerjasama.replace');
+
+Route::delete('/kerjasama/{id}', [KerjasamaInvestorController::class, 'destroy'])->name('kerjasama.destroy');
+
 // Route Informasi Pasar
 Route::get('/informasi_pasar/create', [InformasiPasarController::class, 'create'])->name('informasi_pasar.create');
 
 Route::post('/informasi_pasar/store', [InformasiPasarController::class, 'store'])->name('informasi_pasar.store');
 
-Route::get('/informasi_pasar/show', [InformasiPasarController::class, 'show'])->name('informasi_pasar.show');
+Route::get('/informasi_pasar/show/{id}', [InformasiPasarController::class, 'show'])->name('informasi_pasar.show');
 
-Route::get('/informasi_pasar/edit', [InformasiPasarController::class, 'edit'])->name('informasi_pasar.edit');
+Route::get('/informasi_pasar/edit/{id}', [InformasiPasarController::class, 'edit'])->name('informasi_pasar.edit');
 
 Route::get('/informasi_pasar/index', [InformasiPasarController::class, 'index'])->name('informasi_pasar.index');
 
-Route::get('/informasi_pasar/update/{id}', [InformasiPasarController::class, 'update'])->name('informasi_pasar.update');
+Route::put('/informasi_pasar/update/{id}', [InformasiPasarController::class, 'update'])->name('informasi_pasar.update');
 
 Route::post('/informasi_pasar/replace/{id}', [InformasiPasarController::class, 'replace'])->name('informasi_pasar.replace');
 
